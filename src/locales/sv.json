@@ -1,0 +1,79 @@
+{
+  "site": {
+    "name": "Lilla Karlsö Nature Reserve",
+    "brand": "Lilla Karlsö",
+    "tagline": "Digitalt besökscentrum för ett gotländskt fågelberg"
+  },
+  "common": {
+    "discover": "Utforska ön",
+    "planVisit": "Planera besöket",
+    "readMore": "Läs mer",
+    "viewAll": "Visa alla",
+    "seasonalUpdate": "Säsongsinformation",
+    "lastUpdated": "Senast uppdaterad",
+    "forecast": "Prognos",
+    "today": "I dag",
+    "tomorrow": "I morgon",
+    "practicalInformation": "Praktisk information",
+    "openingHours": "Öppningsperiod",
+    "mapTitle": "Översiktskarta"
+  },
+  "routes": {
+    "home": "Startsida",
+    "visit": "Besök ön",
+    "weather": "Väder och båttrafik",
+    "tours": "Guidade turer",
+    "nature": "Natur och djurliv",
+    "history": "Historia och kultur",
+    "safety": "Säkerhetsinformation",
+    "seasons": "Säsongsinformation",
+    "about": "Om Lilla Karlsö",
+    "contact": "Kontakt"
+  },
+  "navigation": {
+    "overview": "Översikt",
+    "visit": "Planera besöket",
+    "nature": "Lär känna ön",
+    "culture": "Kultur",
+    "information": "Information",
+    "weather": "Väder",
+    "tours": "Turer",
+    "involved": "Engagera dig",
+    "alerts": "Varningar",
+    "map": "Karta",
+    "learn": "Lär känna ön",
+    "info": "Info",
+    "menu": "Meny",
+    "close": "Stäng",
+    "language": "Språk"
+  },
+  "weather": {
+    "title": "Öförhållanden",
+    "boatStatus": "Båttrafik",
+    "weatherOverview": "Väderöversikt",
+    "wind": "Vind",
+    "direction": "Riktning",
+    "temperature": "Temperatur",
+    "updated": "Uppdaterad",
+    "nextHours": "Nästa timmarna",
+    "liveData": "Live från SMHI",
+    "loading": "Hämtar aktuell prognos",
+    "fetchError": "Kunde inte hämta aktuell prognos just nu.",
+    "statusNormal": "Båttrafiken väntas gå normalt.",
+    "statusCaution": "Förhållandena kräver extra bedömning inför avgång.",
+    "statusCancelled": "Avgångar bedöms sannolikt ställas in.",
+    "dockingRisk": "Västerliga vindar ökar risken vid tilläggning.",
+    "source": "SMHI Open Data",
+    "green": "Normalt läge",
+    "yellow": "Förhöjd risk",
+    "red": "Hög risk"
+  },
+  "footer": {
+    "addressTitle": "Besöksinformation",
+    "address": "Djupvik, Ekstakusten, Gotland",
+    "follow": "Följ arbetet",
+    "facebook": "Facebook",
+    "note": "Statisk informationswebb byggd för lång livslängd, enkel uppdatering och låg driftkostnad.",
+    "copyright": "Lilla Karlsö Nature Reserve"
+  }
+}

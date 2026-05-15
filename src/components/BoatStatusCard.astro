@@ -1,0 +1,35 @@
+---
+type Props = {
+  title: string;
+  message: string;
+  detail: string;
+  status: "green" | "yellow" | "red";
+};
+
+const { title, message, detail, status } = Astro.props;
+
+const statusClasses = {
+  green: "bg-safe/16 text-forest border-safe/20",
+  yellow: "bg-warning/16 text-charcoal border-warning/20",
+  red: "bg-danger/16 text-charcoal border-danger/20"
+};
+
+const dotClasses = {
+  green: "bg-safe",
+  yellow: "bg-warning",
+  red: "bg-danger"
+};
+---
+
+<article class="panel p-6" data-boat-card>
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <p class="section-kicker">{title}</p>
+      <div class:list={["mt-4 inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em]", statusClasses[status]]} data-boat-badge>
+        <span class:list={["status-dot", dotClasses[status]]} data-boat-dot></span>
+        <span data-boat-message>{message}</span>
+      </div>
+    </div>
+  </div>
+  <p class="mt-5 text-sm leading-7 text-charcoal/72" data-boat-detail>{detail}</p>
+</article>

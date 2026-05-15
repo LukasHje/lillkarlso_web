@@ -1,0 +1,47 @@
+hero:
+  kicker: Guidade turer
+  title: Turerna ger sammanhang till det som annars bara skimrar förbi i landskapet.
+  intro: Genom guide får klintarna, fågelbergen och växtligheten en berättelse som knyter ihop naturvård, geologi och kulturhistoria.
+  image: /images/birdwatching_lilla_karlso.jpg
+intro:
+  kicker: Upptäck med guide
+  title: Små grupper och tydlig tolkning
+  intro: En väl ledd tur gör besöket rikare och mer skonsamt för ön.
+  body:
+    - Guidade turer fokuserar på orientering, säkerhet och förståelse för platsens ekologiska och kulturhistoriska värden.
+    - Tempot är lugnt och berättandet växlar mellan praktiska råd, landskapsläsning och närstudier av arter och formationer.
+tours:
+  - title: Fågelbergets morgontur
+    duration: 2 timmar
+    season: Maj-juni
+    difficulty: Lätt till medel
+    summary: En tidig tur med fokus på koloniernas aktivitet, flygrörelser och häckningslandskapets dynamik.
+    highlights:
+      - Sillgrissla och tordmule i aktiv koloni
+      - Vind, ljus och ljud som del av upplevelsen
+      - Introduktion till fågelskydd och hänsyn
+  - title: Kalkhed och orkidéer
+    duration: 2,5 timmar
+    season: Maj-juli
+    difficulty: Medel
+    summary: En botaniskt inriktad vandring över öns öppna platå med fokus på jordmån, bete och blomning.
+    highlights:
+      - Orkidéarter och lågväxta ängsväxter
+      - Alvarliknande partier och kalkstenens roll
+      - Hur betet formar vegetationen
+  - title: Reservatets långa linjer
+    duration: 3 timmar
+    season: Juli-september
+    difficulty: Medel
+    summary: En mer berättande tur om människans spår, naturvårdens principer och varför ön känns så orörd.
+    highlights:
+      - Historiskt brukande och dagens förvaltning
+      - Klintterräng och utsiktspunkter
+      - Naturvård som praktisk vardag
+booking:
+  title: Bokning och säsong
+  intro: Turer publiceras årsvis och justeras efter väder, guidetillgång och reservatets känsliga perioder.
+  notes:
+    - Platserna hålls medvetet begränsade för att ge lugnare grupper och mindre påverkan på miljön.
+    - Vissa turer kan ersättas av kortare upplägg om sjöförhållanden eller fågelskydd kräver det.
+    - Gruppbokningar, föreningsbesök och pedagogiska upplägg kan erbjudas efter förfrågan.

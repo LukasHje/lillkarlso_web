@@ -1,0 +1,59 @@
+hero:
+  kicker: Besök
+  title: Besöket börjar på fastlandet, men avgörs av vind, sjö och säsong.
+  intro: Planera med marginal. Båttrafiken är väderberoende och ön saknar den infrastruktur som ofta finns på större besöksmål.
+  image: /images/basecamp_lilla_karlso.jpeg
+visit:
+  overview:
+    kicker: Planera resan
+    title: Praktiska råd för en trygg dagsutflykt
+    intro: Lilla Karlsö fungerar bäst som ett väl förberett naturbesök där enkel logistik, rätt klädsel och respekt för reservatet är utgångspunkten.
+    body:
+      - Kontrollera båtstatus och väder samma morgon. Vindriktning och vindstyrka påverkar tilläggning mer än många besökare först tror.
+      - Ta med vatten, vindskyddande lager och stabila skor. Serviceutbudet på ön är begränsat och terrängen kan vara ojämn, torr eller hal beroende på väder.
+  practicalCards:
+    - title: Föreskrifter
+      text: Reservatet kräver lågmält rörelsemönster, hänsyn till fågelliv och respekt för tillfälliga begränsningar.
+    - title: Tillgänglighet
+      text: Landstigning och vandring sker i naturterräng utan jämna gångytor, vilket påverkar hur tillgängligt besöket är.
+    - title: Egen båt och kajak
+      text: Privat angöring bör bara ske med god lokalkännedom och efter noggrann bedömning av vindriktning, sjö och skyddszoner.
+  steps:
+    - title: 1. Följ läget kvällen före
+      text: Titta på säsongsinformation och båtstatus för att förstå sannolikheten för normal trafik.
+    - title: 2. Kontrollera morgonens vindprognos
+      text: Särskilt sydvästliga och nordvästliga vindar kan snabbt ändra läget vid landstigningen.
+    - title: 3. Kom redo för naturmark
+      text: Ön är ett reservat, inte en serviceanläggning. Egen förberedelse gör stor skillnad.
+safety:
+  overview:
+    kicker: Säkerhet
+    title: Ett reservat med branter, väderomslag och känsliga miljöer
+    intro: Vistelsen bygger på omdöme. Vindförhållanden, klippor och fågelskydd kräver att besöket sker lugnt och med god uppmärksamhet.
+    body:
+      - Håll avstånd till klintkanter, särskilt vid stark vind eller när marken är fuktig. Kalksten kan vara hal och ojämn.
+      - Respektera tillfälliga avspärrningar och begränsningar under häckningsperioden. Skyddet av fågellivet går alltid först.
+  rules:
+    - title: Håll avstånd till stup
+      text: Vissa utsikter är spektakulära, men marken kan vara lös eller smal nära kanten.
+    - title: Följ anvisningar på plats
+      text: Guider och reservatsansvariga anpassar rörelsemönster efter säsong, fågelliv och dagsaktuella förhållanden.
+    - title: Visa hänsyn till djurlivet
+      text: Störningar från höga ljud, avvikelse från stigar eller närgången fotografering kan påverka häckningen.
+  emergency:
+    - title: Vid hårt väder
+      text: Samlas lugnt enligt personalens instruktioner och räkna med att återresan kan justeras.
+    - title: Vid skada
+      text: Larma 112 vid allvarliga händelser och meddela samtidigt guide eller värd om möjligt.
+    - title: Vid osäkerhet
+      text: Fråga hellre en gång extra. Ön ska upplevas varsamt, inte snabbt.
+accessibility:
+  title: Tillgänglighet
+  intro: Besöket passar bäst för personer som klarar landstigning från båt och promenad i naturterräng utan jämna gångytor.
+  items:
+    - title: Båt och brygga
+      text: Angöring kan vara fysisk och kräva balans när sjön rör sig mot land.
+    - title: Underlag
+      text: Stigar går över kalkmark, gräs och ojämna ytor med begränsad tillgänglighetsanpassning.
+    - title: Service
+      text: Det finns inte samma nivå av toaletter, skydd och service som vid större besöksanläggningar.

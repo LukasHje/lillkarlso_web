@@ -1,0 +1,50 @@
+hero:
+  kicker: Natur och djurliv
+  title: Fågelliv, kalkflora och havsmiljö gör Lilla Karlsö till en ovanligt koncentrerad naturupplevelse.
+  intro: Här möts klintkolonier, strandnära ekologi och öppna hedmarker i ett landskap som är litet till ytan men rikt på samband.
+  image: /images/guillimot_on_cliff.jpg
+ecology:
+  kicker: Ekologi
+  title: Ett reservat där vinden, kalken och betet arbetar tillsammans
+  intro: Platsens biologiska rikedom är resultatet av flera långsamma processer som fortfarande pågår.
+  body:
+    - Kalkberggrunden ger speciella förutsättningar för växtligheten och skapar torra, näringsfattiga miljöer där konkurrenssvaga men specialiserade arter kan leva kvar.
+    - Havet för in salt, fukt och vindtryck, medan betet håller markerna öppna. Det är kombinationen av dessa faktorer som ger ön dess särprägel.
+habitats:
+  - title: Kalkklintar
+    text: De branta stupen fungerar både som geologisk signatur och som häckningsmiljö för tusentals fåglar.
+  - title: Alvarlik kalkmark
+    text: Tunna jordlager och exponerade hällar skapar ett hårt men artrikt växtsamhälle.
+  - title: Strandvallar och låga slätter
+    text: Här märks samspelet mellan havsnivå, stenmaterial och vegetation tydligt i landskapet.
+  - title: Betade gräsmarker
+    text: Öppna ytor med varierad blomning gynnar både botaniska värden och överblick i landskapet.
+species:
+  - name: Sillgrissla
+    category: Sjöfågel
+    summary: En av reservatets mest karaktäristiska arter, synlig i täta kolonier på branta klintavsatser.
+  - name: Tordmule
+    category: Sjöfågel
+    summary: Ses ofta tillsammans med sillgrisslan och bidrar starkt till ljudbilden över fågelberget.
+  - name: Orkidéer
+    category: Flora
+    summary: Kalkjordar och öppna betesmarker ger förutsättningar för en rik och säsongsmässigt skiftande blomning.
+  - name: Strandnära insektsliv
+    category: Ekologi
+    summary: Solvarma lägen, blomrika ytor och lågvuxna marker ger livsmiljöer åt pollinatörer och andra insekter.
+  - name: Karlsösallat och kalkväxter
+    category: Flora
+    summary: Specialiserade växter berättar om öns geologi, långvariga bete och isolerade läge.
+  - name: Östersjöns kustekologi
+    category: Havsmiljö
+    summary: Hav, vind och salt påverkar både arternas beteende och besökarens upplevelse av platsen.
+conservation:
+  title: Naturvårdsarbete
+  intro: Skyddet handlar både om att bevara det som är känsligt nu och om att vårda de processer som skapat landskapet över tid.
+  efforts:
+    - title: Hänsyn under häckning
+      text: Tillträde och rörelsemönster anpassas för att minska störningar under de mest känsliga perioderna.
+    - title: Fortsatt hävd
+      text: Betespräglade marker behöver skötas för att den öppna karaktären och artrikedomen ska bestå.
+    - title: Tydlig besöksvägledning
+      text: God information minskar slitaget och hjälper fler att förstå varför vissa begränsningar finns.

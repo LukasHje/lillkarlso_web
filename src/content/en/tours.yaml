@@ -1,0 +1,47 @@
+hero:
+  kicker: Guided tours
+  title: The tours give context to details that would otherwise pass only as light, wind, and movement.
+  intro: With a guide, the cliffs, seabird ledges, and vegetation become part of a connected story about geology, conservation, and cultural history.
+  image: /images/birdwatching_lilla_karlso.jpg
+intro:
+  kicker: Discover with a guide
+  title: Small groups and clear interpretation
+  intro: A well-led tour makes the visit richer while reducing pressure on the reserve.
+  body:
+    - Guided walks focus on orientation, safety, and understanding the island's ecological and cultural values.
+    - The pace is calm, combining practical guidance, landscape reading, and close attention to species and formations.
+tours:
+  - title: Morning seabird walk
+    duration: 2 hours
+    season: May-June
+    difficulty: Easy to moderate
+    summary: An early tour focused on colony activity, flight behaviour, and the dynamics of the nesting cliffs.
+    highlights:
+      - Guillemot and razorbill activity at the ledges
+      - Wind, light, and sound as part of the experience
+      - Introduction to bird protection and visitor care
+  - title: Limestone grassland and orchids
+    duration: 2.5 hours
+    season: May-July
+    difficulty: Moderate
+    summary: A botanically oriented walk across the open plateau with attention to soil, grazing, and seasonal flowering.
+    highlights:
+      - Orchid species and low-growing meadow flora
+      - Alvar-like surfaces and the role of limestone
+      - How grazing shapes vegetation
+  - title: The long lines of the reserve
+    duration: 3 hours
+    season: July-September
+    difficulty: Moderate
+    summary: A broader interpretive walk on human traces, conservation principles, and why the island still feels so spare.
+    highlights:
+      - Historic land use and present stewardship
+      - Cliff terrain and outlooks
+      - Conservation as everyday practice
+booking:
+  title: Booking and season
+  intro: Tours are published annually and adjusted according to weather, guide availability, and sensitive periods in the reserve.
+  notes:
+    - Group sizes remain intentionally small to support calmer visits and reduce environmental pressure.
+    - Some tours may shift to shorter formats if sea conditions or bird protection requirements demand it.
+    - Group bookings, association visits, and educational formats can be arranged on request.

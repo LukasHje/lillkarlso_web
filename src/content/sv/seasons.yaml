@@ -1,0 +1,52 @@
+hero:
+  kicker: Årstider
+  title: Säsongen styr inte bara när man kan resa ut, utan hur ön upplevs.
+  intro: Lilla Karlsö förändras tydligt mellan vårens fågelliv, sommarens ljus och sensäsongens lugnare rytm.
+  image: /images/gotland_lilla_karlso_winter.jpg
+overview:
+  kicker: Säsongsrytm
+  title: Samma plats, olika villkor
+  intro: Besöksvärdet följer naturens kalender. Därför bör information om öppning, väder och hänsyn alltid läsas tillsammans.
+  body:
+    - Vår och försommar ger de mest intensiva naturupplevelserna, men också den känsligaste perioden för fågelliv och angöring.
+    - Högsommar innebär ofta mer stabil logistik, medan sensommaren erbjuder ett stillsammare ljus och större känsla av avskildhet.
+seasons:
+  - title: Vår och försommar
+    months: April-juni
+    status: yellow
+    summary: Höga naturvärden, starkt fågelliv och väder som snabbt kan ändra dagens planering.
+    highlights:
+      - Alkfåglar i kolonierna
+      - Orkidéer och blommande kalkmarker
+      - Ökad känslighet i häckningsområden
+  - title: Högsommar
+    months: Juli-augusti
+    status: green
+    summary: Den mest tillgängliga perioden för många besökare, men fortfarande med havet som avgörande faktor.
+    highlights:
+      - Långa ljusa dagar
+      - Goda möjligheter till guidade turer
+      - Torrare stigar och tydlig sikt
+  - title: Sensommar och tidig höst
+    months: September
+    status: yellow
+    summary: Lugnt tempo, klar luft och färre besökare, men större variation i vind och sjögång.
+    highlights:
+      - Stillsammare atmosfär
+      - Fint ljus över klintarna
+      - Kortare planeringsfönster för båttrafik
+  - title: Lågsäsong
+    months: Oktober-mars
+    status: red
+    summary: Reguljär besöksverksamhet är normalt inte i gång och ön ska ses som otillgänglig för vanlig turism.
+    highlights:
+      - Ingen normal dagsutflyktslogistik
+      - Hårdare väderläge
+      - Fokus på skydd och återhämtning i naturen
+planning:
+  title: Planera efter rytmen
+  intro: För bäst upplevelse bör besöket planeras med både kalender och prognos i åtanke.
+  notes:
+    - Kontrollera varje säsong när båtar börjar gå och hur bokningen är upplagd.
+    - Undvik att tolka en varm dag som ett löfte om enkel tillgång; vindförhållandena avgör fortfarande mycket.
+    - Läs alltid aktuell banner om tillträde, vägledning eller särskilda naturvårdsåtgärder.

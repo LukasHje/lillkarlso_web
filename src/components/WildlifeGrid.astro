@@ -1,0 +1,25 @@
+---
+type Species = {
+  name: string;
+  category: string;
+  summary: string;
+};
+
+type Props = {
+  items: Species[];
+};
+
+const { items } = Astro.props;
+---
+
+<div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+  {
+    items.map((item, index) => (
+      <article class="panel p-6" data-reveal style={`animation-delay:${index * 80}ms`}>
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-moss">{item.category}</p>
+        <h3 class="mt-4 font-serif text-3xl text-charcoal">{item.name}</h3>
+        <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.summary}</p>
+      </article>
+    ))
+  }
+</div>

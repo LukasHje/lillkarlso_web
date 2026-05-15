@@ -1,0 +1,439 @@
+---
+import AlertBanner from "@/components/AlertBanner.astro";
+import HeroBanner from "@/components/HeroBanner.astro";
+import IslandFacts from "@/components/IslandFacts.astro";
+import LiveConditions from "@/components/LiveConditions.astro";
+import MapSection from "@/components/MapSection.astro";
+import SeasonalStatus from "@/components/SeasonalStatus.astro";
+import TourCard from "@/components/TourCard.astro";
+import WildlifeGrid from "@/components/WildlifeGrid.astro";
+
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
+import { getSiteContent } from "@/lib/content";
+import type { PageKey } from "@/lib/site";
+import { getLocaleUrl } from "@/lib/site";
+
+type Props = {
+  locale: Locale;
+  routeKey: Exclude<PageKey, "home">;
+};
+
+const { locale, routeKey } = Astro.props;
+const messages = t(locale);
+const content = getSiteContent(locale);
+
+const customHeroes = {
+  history: {
+    kicker: messages.routes.history,
+    title: content.island.history.section.title,
+    intro: content.island.history.section.intro,
+    image: "/images/sudervagnhus_cave.jpg"
+  },
+  weather: {
+    kicker: messages.routes.weather,
+    title:
+      locale === "sv"
+        ? "Live väderdata och tolkad båtstatus för ett väderkänsligt reservat."
+        : "Live weather data and interpreted boat status for an exposed island reserve.",
+    intro:
+      locale === "sv"
+        ? "Vindstyrka, vindriktning och dockningsrisk vägs samman för att ge en begriplig bild av dagens läge."
+        : "Wind speed, direction, and docking exposure are combined to produce a practical reading of today's conditions.",
+    image: "/images/gotland_lilla_karlso_winter.jpg"
+  },
+  safety: {
+    kicker: messages.routes.safety,
+    title: content.travelInfo.safety.overview.title,
+    intro: content.travelInfo.safety.overview.intro,
+    image: "/images/gotland_lilla_karlso_winter.jpg"
+  },
+  about: {
+    kicker: messages.routes.about,
+    title: content.island.about.section.title,
+    intro: content.island.about.section.intro,
+    image: "/images/lilla-karlso-topdown.jpg"
+  },
+  contact: {
+    kicker: messages.routes.contact,
+    title: content.island.contact.title,
+    intro: content.island.contact.intro,
+    image: "/images/basecamp_lilla_karlso.jpeg"
+  }
+} as const;
+---
+
+{
+  routeKey === "visit" && (
+    <>
+      <HeroBanner
+        kicker={content.travelInfo.hero.kicker}
+        title={content.travelInfo.hero.title}
+        intro={content.travelInfo.hero.intro}
+        image={content.travelInfo.hero.image}
+        compact
+      />
+      <div class="container-shell space-y-18 py-16">
+        <section id="visit-overview" class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
+          <div>
+            <p class="section-kicker">{content.travelInfo.visit.overview.kicker}</p>
+            <h2 class="mt-4 section-title">{content.travelInfo.visit.overview.title}</h2>
+            <p class="mt-5 section-copy">{content.travelInfo.visit.overview.intro}</p>
+            <div class="mt-8 space-y-4">
+              {content.travelInfo.visit.overview.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+            </div>
+          </div>
+          <div class="grid gap-5">
+            {content.travelInfo.visit.practicalCards.map((item) => (
+              <article class="panel p-6">
+                <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section class="grid gap-5 md:grid-cols-3">
+          {content.travelInfo.visit.steps.map((item) => (
+            <article class="panel p-6">
+              <p class="section-kicker">{messages.common.planVisit}</p>
+              <h3 class="mt-4 text-xl font-semibold text-charcoal">{item.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.text}</p>
+            </article>
+          ))}
+        </section>
+        <section id="accessibility" class="space-y-8">
+          <div class="max-w-3xl">
+            <p class="section-kicker">{locale === "sv" ? "Tillgänglighet" : "Accessibility"}</p>
+            <h2 class="mt-4 section-title">{content.travelInfo.accessibility.title}</h2>
+            <p class="mt-5 section-copy">{content.travelInfo.accessibility.intro}</p>
+          </div>
+          <div class="grid gap-5 md:grid-cols-3">
+            {content.travelInfo.accessibility.items.map((item) => (
+              <article class="panel p-6">
+                <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section id="boat-kayak" class="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-center">
+          <div>
+            <p class="section-kicker">{locale === "sv" ? "Egen angöring" : "Private landing"}</p>
+            <h2 class="mt-4 section-title">{locale === "sv" ? "Egen båt eller kajak kräver stor försiktighet." : "Own boat or kayak access requires significant caution."}</h2>
+            <p class="mt-5 section-copy">
+              {locale === "sv"
+                ? "Även om havet ser lugnt ut från fastlandet kan tilläggning vara svår vid ön. Västliga, sydvästliga och nordvästliga vindar gör läget snabbt mer utsatt."
+                : "Even if the sea appears calm from the mainland, landing at the island may still be difficult. Westerly, southwesterly, and northwesterly winds quickly increase exposure."}
+            </p>
+          </div>
+          <div class="panel p-8">
+            <ul class="grid gap-4 text-sm leading-7 text-charcoal/72">
+              <li class="rounded-2xl bg-fog/74 px-5 py-4">
+                {locale === "sv"
+                  ? "Bedöm alltid vindriktning och inte bara vindstyrka. Angöringen är den känsligaste delen av besöket."
+                  : "Always assess wind direction, not only wind speed. The landing itself is the most sensitive part of the visit."}
+              </li>
+              <li class="rounded-2xl bg-fog/74 px-5 py-4">
+                {locale === "sv"
+                  ? "Följ reservatsföreskrifter och håll marginal till fågelskydd och känsliga strandpartier."
+                  : "Follow reserve rules and keep clear margins to bird protection areas and sensitive shore habitats."}
+              </li>
+              <li class="rounded-2xl bg-fog/74 px-5 py-4">
+                {locale === "sv"
+                  ? "Om dagens läge är osäkert bör egen angöring skjutas upp även om reguljär trafik ännu inte är helt inställd."
+                  : "If conditions are uncertain, private landing should be postponed even if scheduled boat traffic has not yet been fully cancelled."}
+              </li>
+            </ul>
+          </div>
+        </section>
+        <MapSection sectionId="visit-map" title={content.island.map.title} intro={content.island.map.intro} points={content.island.map.points} />
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "weather" && (
+    <>
+      <HeroBanner {...customHeroes.weather} compact />
+      <div class="container-shell space-y-18 py-16">
+        {
+          content.alerts.banner.enabled && (
+            <AlertBanner status={content.alerts.banner.status} title={content.alerts.banner.title} body={content.alerts.banner.body} />
+          )
+        }
+        <LiveConditions locale={locale} sectionId={`weather-page-${locale}`} />
+        <section class="grid gap-5 md:grid-cols-3">
+          {content.alerts.cards.map((item) => <AlertBanner status={item.status} title={item.title} body={item.body} />)}
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "tours" && (
+    <>
+      <HeroBanner
+        kicker={content.tours.hero.kicker}
+        title={content.tours.hero.title}
+        intro={content.tours.hero.intro}
+        image={content.tours.hero.image}
+        compact
+      />
+      <div class="container-shell space-y-18 py-16">
+        <section class="max-w-3xl">
+          <p class="section-kicker">{content.tours.intro.kicker}</p>
+          <h2 class="mt-4 section-title">{content.tours.intro.title}</h2>
+          <p class="mt-5 section-copy">{content.tours.intro.intro}</p>
+          <div class="mt-8 space-y-4">
+            {content.tours.intro.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+          </div>
+        </section>
+        <section class="grid gap-5 xl:grid-cols-3">
+          {content.tours.tours.map((tour) => <TourCard tour={tour} />)}
+        </section>
+        <section class="panel p-8">
+          <p class="section-kicker">{messages.routes.contact}</p>
+          <h2 class="mt-4 font-serif text-4xl text-charcoal">{content.tours.booking.title}</h2>
+          <p class="mt-5 max-w-3xl text-base leading-7 text-charcoal/76">{content.tours.booking.intro}</p>
+          <ul class="mt-8 grid gap-4 text-sm leading-7 text-charcoal/72">
+            {content.tours.booking.notes.map((note) => <li class="rounded-2xl bg-fog/74 px-5 py-4">{note}</li>)}
+          </ul>
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "nature" && (
+    <>
+      <HeroBanner
+        kicker={content.wildlife.hero.kicker}
+        title={content.wildlife.hero.title}
+        intro={content.wildlife.hero.intro}
+        image={content.wildlife.hero.image}
+        compact
+      />
+      <div class="container-shell space-y-18 py-16">
+        <section class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p class="section-kicker">{content.wildlife.ecology.kicker}</p>
+            <h2 class="mt-4 section-title">{content.wildlife.ecology.title}</h2>
+            <p class="mt-5 section-copy">{content.wildlife.ecology.intro}</p>
+            <div class="mt-8 space-y-4">
+              {content.wildlife.ecology.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+            </div>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-2">
+            {content.wildlife.habitats.map((item) => (
+              <article class="panel p-6">
+                <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section class="space-y-8">
+          <div class="max-w-3xl">
+            <p class="section-kicker">{messages.routes.nature}</p>
+            <h2 class="mt-4 section-title">{locale === "sv" ? "Arter och samband" : "Species and relationships"}</h2>
+          </div>
+          <WildlifeGrid items={content.wildlife.species} />
+        </section>
+        <section class="panel p-8">
+          <p class="section-kicker">{locale === "sv" ? "Naturvård" : "Conservation"}</p>
+          <h2 class="mt-4 font-serif text-4xl text-charcoal">{content.wildlife.conservation.title}</h2>
+          <p class="mt-5 max-w-3xl text-base leading-7 text-charcoal/76">{content.wildlife.conservation.intro}</p>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            {content.wildlife.conservation.efforts.map((item) => (
+              <article class="rounded-[1.75rem] border border-charcoal/8 bg-white/60 p-6">
+                <h3 class="text-xl font-semibold text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "history" && (
+    <>
+      <HeroBanner {...customHeroes.history} compact />
+      <div class="container-shell space-y-18 py-16">
+        <section class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+          <div class="space-y-4">
+            {content.island.history.section.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+          </div>
+          <div class="grid gap-5 sm:grid-cols-3">
+            {content.island.history.timeline.map((entry) => (
+              <article class="panel p-6">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-moss">{entry.year}</p>
+                <h3 class="mt-4 font-serif text-3xl text-charcoal">{entry.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{entry.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section class="panel p-8">
+          <p class="section-kicker">{messages.routes.about}</p>
+          <h2 class="mt-4 font-serif text-4xl text-charcoal">{content.island.about.section.title}</h2>
+          <div class="mt-8 grid gap-5 md:grid-cols-3">
+            {content.island.about.stewardship.map((item) => (
+              <article class="rounded-[1.75rem] border border-charcoal/8 bg-white/60 p-6">
+                <h3 class="text-xl font-semibold text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "safety" && (
+    <>
+      <HeroBanner {...customHeroes.safety} compact />
+      <div class="container-shell space-y-18 py-16">
+        <section class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
+          <div>
+            <p class="section-kicker">{content.travelInfo.safety.overview.kicker}</p>
+            <h2 class="mt-4 section-title">{content.travelInfo.safety.overview.title}</h2>
+            <p class="mt-5 section-copy">{content.travelInfo.safety.overview.intro}</p>
+            <div class="mt-8 space-y-4">
+              {content.travelInfo.safety.overview.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+            </div>
+          </div>
+          <div class="grid gap-5">
+            {content.travelInfo.safety.rules.map((item) => (
+              <article class="panel p-6">
+                <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section class="grid gap-5 md:grid-cols-3">
+          {content.travelInfo.safety.emergency.map((item) => (
+            <article class="panel p-6">
+              <p class="section-kicker">{locale === "sv" ? "Beredskap" : "Preparedness"}</p>
+              <h3 class="mt-4 text-xl font-semibold text-charcoal">{item.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.text}</p>
+            </article>
+          ))}
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "seasons" && (
+    <>
+      <HeroBanner
+        kicker={content.seasons.hero.kicker}
+        title={content.seasons.hero.title}
+        intro={content.seasons.hero.intro}
+        image={content.seasons.hero.image}
+        compact
+      />
+      <div class="container-shell space-y-18 py-16">
+        <section class="max-w-3xl">
+          <p class="section-kicker">{content.seasons.overview.kicker}</p>
+          <h2 class="mt-4 section-title">{content.seasons.overview.title}</h2>
+          <p class="mt-5 section-copy">{content.seasons.overview.intro}</p>
+          <div class="mt-8 space-y-4">
+            {content.seasons.overview.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+          </div>
+        </section>
+        <SeasonalStatus items={content.seasons.seasons} />
+        <section class="panel p-8">
+          <p class="section-kicker">{messages.common.planVisit}</p>
+          <h2 class="mt-4 font-serif text-4xl text-charcoal">{content.seasons.planning.title}</h2>
+          <p class="mt-5 max-w-3xl text-base leading-7 text-charcoal/76">{content.seasons.planning.intro}</p>
+          <ul class="mt-8 grid gap-4 text-sm leading-7 text-charcoal/72">
+            {content.seasons.planning.notes.map((note) => <li class="rounded-2xl bg-fog/74 px-5 py-4">{note}</li>)}
+          </ul>
+        </section>
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "about" && (
+    <>
+      <HeroBanner {...customHeroes.about} compact />
+      <div class="container-shell space-y-18 py-16">
+        <section class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
+          <div>
+            <p class="section-kicker">{content.island.about.section.kicker}</p>
+            <h2 class="mt-4 section-title">{content.island.about.section.title}</h2>
+            <p class="mt-5 section-copy">{content.island.about.section.intro}</p>
+            <div class="mt-8 space-y-4">
+              {content.island.about.section.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+            </div>
+          </div>
+          <div class="grid gap-5">
+            {content.island.about.stewardship.map((item) => (
+              <article class="panel p-6">
+                <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        <IslandFacts facts={content.island.facts} />
+      </div>
+    </>
+  )
+}
+
+{
+  routeKey === "contact" && (
+    <>
+      <HeroBanner {...customHeroes.contact} compact />
+      <div class="container-shell space-y-18 py-16">
+        <section class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p class="section-kicker">{messages.routes.contact}</p>
+            <h2 class="mt-4 section-title">{content.island.contact.title}</h2>
+            <p class="mt-5 section-copy">{content.island.contact.intro}</p>
+            <div class="mt-8 space-y-4">
+              <p class="text-base leading-7 text-charcoal/76">
+                {locale === "sv"
+                  ? "Säsongsöppning, båttrafik, bokning och vägledning uppdateras i lugn takt. Kontakta reservatet om du planerar gruppbesök eller behöver ett besked inför resa."
+                  : "Seasonal opening, boat access, booking information, and visitor guidance are updated gradually. Contact the reserve if you are planning a group visit or need confirmation before travelling."}
+              </p>
+            </div>
+          </div>
+          <div class="grid gap-5">
+            {content.island.contact.details.map((detail) => (
+              <article class="panel p-6">
+                <p class="section-kicker">{detail.label}</p>
+                {
+                  detail.href ? (
+                    <a href={detail.href} class="mt-4 inline-flex font-serif text-4xl text-charcoal transition hover:text-forest">
+                      {detail.value}
+                    </a>
+                  ) : (
+                    <p class="mt-4 font-serif text-4xl text-charcoal">{detail.value}</p>
+                  )
+                }
+              </article>
+            ))}
+          </div>
+        </section>
+        <div class="flex">
+          <a href={getLocaleUrl(locale, "visit")} class="card-link">{messages.common.planVisit}</a>
+        </div>
+      </div>
+    </>
+  )
+}

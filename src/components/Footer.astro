@@ -1,0 +1,54 @@
+---
+import type { Locale } from "@/lib/i18n";
+import { getLocaleUrl } from "@/lib/site";
+import { t } from "@/lib/i18n";
+
+type Props = {
+  locale: Locale;
+};
+
+const { locale } = Astro.props;
+const messages = t(locale);
+---
+
+<footer class="mt-24 bg-night text-fog">
+  <div class="container-shell py-16">
+    <div class="grid gap-10 lg:grid-cols-[1.35fr_1fr_1fr]">
+      <div>
+        <p class="section-kicker text-limestone/70">{messages.footer.addressTitle}</p>
+        <h2 class="mt-4 font-serif text-4xl text-white">{messages.site.name}</h2>
+        <p class="mt-4 max-w-xl text-base leading-7 text-fog/75">{messages.footer.note}</p>
+        <div class="mt-6">
+          <p class="section-kicker text-limestone/70">{messages.footer.follow}</p>
+          <a
+            href="https://facebook.com/NaturskyddsforeningenGotland/"
+            target="_blank"
+            rel="noreferrer"
+            class="mt-4 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-semibold text-fog transition hover:bg-white/10 hover:text-white"
+          >
+            <svg viewBox="0 0 20 20" class="h-4 w-4" aria-hidden="true">
+              <path d="M11.3 17v-6h2l.3-2.2h-2.3V7.4c0-.7.2-1.2 1.2-1.2H14V4.2c-.2 0-.8-.1-1.6-.1-1.6 0-2.8.9-2.8 3V8.8H8v2.2h1.6v6h1.7Z" fill="currentColor"></path>
+            </svg>
+            {messages.footer.facebook}
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-kicker text-limestone/70">{messages.routes.visit}</p>
+        <div class="mt-4 grid gap-3 text-sm text-fog/80">
+          <a href={getLocaleUrl(locale, "visit")} class="transition hover:text-white">{messages.routes.visit}</a>
+          <a href={getLocaleUrl(locale, "weather")} class="transition hover:text-white">{messages.routes.weather}</a>
+          <a href={getLocaleUrl(locale, "tours")} class="transition hover:text-white">{messages.routes.tours}</a>
+          <a href={getLocaleUrl(locale, "contact")} class="transition hover:text-white">{messages.routes.contact}</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-kicker text-limestone/70">{messages.footer.addressTitle}</p>
+        <p class="mt-4 text-sm leading-7 text-fog/80">{messages.footer.address}</p>
+        <p class="mt-6 text-xs uppercase tracking-[0.24em] text-fog/50">&copy; 2026 {messages.footer.copyright}</p>
+      </div>
+    </div>
+  </div>
+</footer>

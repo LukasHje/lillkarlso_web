@@ -1,0 +1,64 @@
+---
+type MapPoint = {
+  name: string;
+  type: string;
+  description: string;
+};
+
+type Props = {
+  sectionId?: string;
+  title: string;
+  intro: string;
+  points: MapPoint[];
+};
+
+const { sectionId, title, intro, points } = Astro.props;
+---
+
+<section id={sectionId} class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+  <div class="panel overflow-hidden p-6 sm:p-8">
+    <svg viewBox="0 0 860 540" class="w-full" role="img" aria-label={title}>
+      <defs>
+        <linearGradient id="sea" x1="0" x2="1">
+          <stop offset="0%" stop-color="#dde7df"></stop>
+          <stop offset="100%" stop-color="#edf0ea"></stop>
+        </linearGradient>
+        <linearGradient id="land" x1="0" x2="1">
+          <stop offset="0%" stop-color="#d8ccb7"></stop>
+          <stop offset="100%" stop-color="#c9bea8"></stop>
+        </linearGradient>
+      </defs>
+      <rect width="860" height="540" rx="32" fill="url(#sea)"></rect>
+      <path d="M266 130c66-42 154-48 223-3 56 37 86 116 60 183-21 56-78 104-140 117-72 16-157 2-210-52-55-57-62-145-29-206 17-30 51-59 96-39Z" fill="url(#land)" stroke="#b6a98f" stroke-width="10"></path>
+      <path d="M265 130c44 24 63 68 86 104 18 28 43 53 89 71 35 13 71 17 109 14" fill="none" stroke="#6d876f" stroke-width="8" stroke-dasharray="14 18"></path>
+      <circle cx="165" cy="360" r="11" fill="#254335"></circle>
+      <circle cx="410" cy="292" r="11" fill="#254335"></circle>
+      <circle cx="515" cy="198" r="11" fill="#254335"></circle>
+      <circle cx="585" cy="340" r="11" fill="#254335"></circle>
+      <path d="M102 357h42M421 292h42M526 198h42M596 340h42" stroke="#254335" stroke-width="4" stroke-linecap="round"></path>
+      <text x="106" y="347" fill="#18211d" font-size="20" font-family="Manrope Variable, sans-serif">Djupvik</text>
+      <text x="470" y="282" fill="#18211d" font-size="20" font-family="Manrope Variable, sans-serif">Landing</text>
+      <text x="576" y="188" fill="#18211d" font-size="20" font-family="Manrope Variable, sans-serif">Viewpoint</text>
+      <text x="648" y="330" fill="#18211d" font-size="20" font-family="Manrope Variable, sans-serif">Trail</text>
+    </svg>
+  </div>
+
+  <div>
+    <p class="section-kicker">Map</p>
+    <h2 class="mt-4 section-title">{title}</h2>
+    <p class="mt-5 section-copy">{intro}</p>
+    <div class="mt-8 grid gap-4">
+      {
+        points.map((point) => (
+          <article class="panel p-5">
+            <div class="flex flex-wrap items-center gap-3">
+              <p class="text-lg font-semibold text-charcoal">{point.name}</p>
+              <span class="rounded-full bg-fog px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-charcoal/58">{point.type}</span>
+            </div>
+            <p class="mt-3 text-sm leading-6 text-charcoal/70">{point.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

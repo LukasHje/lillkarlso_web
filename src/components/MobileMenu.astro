@@ -1,0 +1,55 @@
+---
+type NavigationGroup = {
+  title: string;
+  href: string;
+  external?: boolean;
+  items: Array<{
+    label: string;
+    href: string;
+    description: string;
+    external?: boolean;
+  }>;
+};
+
+type Props = {
+  label: string;
+  groups: NavigationGroup[];
+  languageSlot?: string;
+};
+
+const { label, groups } = Astro.props;
+---
+
+<details class="lg:hidden">
+  <summary class="flex cursor-pointer list-none items-center gap-3 rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-fog transition hover:bg-white/12">
+    <span>{label}</span>
+    <span class="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10">
+      <svg viewBox="0 0 20 20" class="h-4 w-4" aria-hidden="true">
+        <path d="M4 6h12M4 10h12M4 14h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+      </svg>
+    </span>
+  </summary>
+
+  <div class="absolute inset-x-0 top-full mt-3 panel-dark p-5">
+    <div class="grid gap-5">
+      {
+        groups.map((group) => (
+          <div class="rounded-[1.5rem] border border-white/8 bg-white/4 p-4">
+            <a href={group.href} target={group.external ? "_blank" : undefined} rel={group.external ? "noreferrer" : undefined} class="mb-3 inline-flex text-sm font-semibold uppercase tracking-[0.2em] text-limestone">
+              {group.title}
+            </a>
+            <div class="grid gap-3">
+              {group.items.map((item) => (
+                <a href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined} class="rounded-2xl border border-white/0 bg-black/10 px-3 py-3 transition hover:border-white/10 hover:bg-white/8">
+                  <p class="font-semibold text-white">{item.label}</p>
+                  <p class="mt-1 text-sm leading-6 text-fog/70">{item.description}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+      <slot />
+    </div>
+  </div>
+</details>

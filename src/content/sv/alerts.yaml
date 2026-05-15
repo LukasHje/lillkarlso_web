@@ -1,0 +1,15 @@
+banner:
+  enabled: true
+  status: yellow
+  title: Båttrafiken påverkas snabbt av västliga vindar
+  body: Kontrollera väder- och båtstatus samma morgon som avresa. Även vid i övrigt god prognos kan tilläggning bli svår vid väst, sydväst eller nordväst.
+cards:
+  - status: green
+    title: Planerad sommarsäsong
+    body: Guidade turer och dagsbesök publiceras årsvis och uppdateras i god tid inför högsäsongen.
+  - status: yellow
+    title: Häckningshänsyn
+    body: Vissa delar av ön kan få tydligare rörelseanvisningar under vår och försommar när fågellivet är som känsligast.
+  - status: red
+    title: Hård vind eller grov sjö
+    body: Vid kraftiga vindar kan avgångar ställas in med kort varsel även om turen tidigare varit planerad som normal.

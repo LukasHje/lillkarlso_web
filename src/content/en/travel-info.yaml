@@ -1,0 +1,59 @@
+hero:
+  kicker: Visit
+  title: The visit begins on the mainland, but weather, sea state, and season decide the day.
+  intro: Plan with margin. Boat access depends on the forecast, and the island does not offer the infrastructure of a large visitor destination.
+  image: /images/basecamp_lilla_karlso.jpeg
+visit:
+  overview:
+    kicker: Travel planning
+    title: Practical guidance for a careful day trip
+    intro: Lilla Karlsö works best as a well-prepared nature visit where simple logistics, suitable clothing, and respect for the reserve set the tone.
+    body:
+      - Check the boat status and weather again on the morning of departure. Wind direction and strength affect docking more than many visitors first expect.
+      - Bring water, windproof layers, and sturdy footwear. Services on the island are limited and surfaces may be dry, uneven, or slippery depending on conditions.
+  practicalCards:
+    - title: Reserve regulations
+      text: The reserve depends on low-impact movement, consideration for birdlife, and respect for temporary restrictions.
+    - title: Accessibility
+      text: Landing and walking happen on natural terrain without level surfaces, which shapes how accessible the visit is.
+    - title: Own boat and kayak
+      text: Private landing should only be attempted with strong local judgement and careful assessment of wind direction, sea state, and protected areas.
+  steps:
+    - title: 1. Check the evening update
+      text: Read the seasonal information and boat status to understand the likelihood of normal traffic.
+    - title: 2. Review the morning wind forecast
+      text: Southwesterly and northwesterly winds can quickly change the practical landing conditions.
+    - title: 3. Arrive prepared for natural terrain
+      text: The island is a reserve, not a service complex. Personal preparation matters.
+safety:
+  overview:
+    kicker: Safety
+    title: A reserve with cliffs, rapid weather shifts, and sensitive habitats
+    intro: Visiting depends on judgement. Wind, exposed cliff edges, and bird protection all require calm attention.
+    body:
+      - Keep distance from cliff edges, especially in strong wind or after damp weather. Limestone can be slick and irregular.
+      - Respect temporary restrictions during the nesting period. The protection of birdlife always takes priority.
+  rules:
+    - title: Keep clear of cliff edges
+      text: Some viewpoints are dramatic, but the ground near the rim can be narrow, rough, or unstable.
+    - title: Follow on-site guidance
+      text: Guides and reserve stewards adapt visitor movement to season, birdlife, and daily conditions.
+    - title: Respect wildlife
+      text: Loud noise, straying from paths, or close-range photography can disturb nesting birds.
+  emergency:
+    - title: In strong weather
+      text: Gather calmly as directed by staff and expect that return departures may need to be revised.
+    - title: If someone is injured
+      text: Call 112 for serious emergencies and inform the guide or host as soon as possible.
+    - title: If unsure
+      text: Ask early rather than late. The island should be experienced carefully, not quickly.
+accessibility:
+  title: Accessibility
+  intro: The visit is best suited to people who can manage boat landing and walking across natural terrain without level surfaces.
+  items:
+    - title: Boat and landing
+      text: Boarding and landing can be physical and may require balance when the sea is moving.
+    - title: Ground conditions
+      text: Paths cross limestone, grass, and uneven surfaces with limited physical adaptation.
+    - title: Services
+      text: Toilets, shelters, and support facilities are not available at the same level as major visitor sites.

@@ -1,0 +1,95 @@
+hero:
+  kicker: Naturreservat i Östersjön
+  title: Lilla Karlsö är ett stilla fågelberg med kalkklintar, orkidéängar och hav runt hela horisonten.
+  intro: Ett besök hit är en resa till ett öppet, väderutsatt och biologiskt särpräglat landskap där naturvård, fågelliv och gotländsk kulturhistoria möts.
+  image: /images/lilla-karlso-topdown.jpg
+  cta:
+    label: Planera ditt besök
+    href: /sv/besok/
+  secondaryCta:
+    label: Se öförhållanden
+    href: /sv/vader/
+overview:
+  kicker: Om ön
+  title: Ett kargt reservat med ovanligt rik mångfald
+  intro: Lilla Karlsö ligger strax utanför Gotlands västkust och upplevs både avskild och nära på samma gång.
+  body:
+    - Ön är liten till ytan men stor i uttryck. Kalkstensplatån, de branta stupen och de låga strandvallarna skapar ett landskap som förändras snabbt med ljus, vind och årstid.
+    - Betet har präglat ön under lång tid och bidragit till öppna marker med orkidéer, enbuskar, alvarlika hällar och blomrika gräsytor. Samtidigt gör fågelbergen Lilla Karlsö till en av de mest fascinerande naturupplevelserna i regionen.
+facts:
+  - label: Lägesbild
+    value: Cirka 3 km från Gotlands västkust
+  - label: Högsta punkt
+    value: 66 meter över havet
+  - label: Naturtyp
+    value: Kalkplatå, klintar och alvarbetesmark
+  - label: Förvaltning
+    value: Skyddad reservatsmiljö med naturvårdsfokus
+highlights:
+  - title: Klintar och raukar
+    text: Branta väst- och öststup möter ett öppet platålandskap med tydliga spår av havets och kalkens formkraft.
+  - title: Fågelberg
+    text: Under häckningssäsongen fylls luften av tordmular, sillgrisslor och ett ständigt brus från kolonierna.
+  - title: Botaniska värden
+    text: Vår och försommar ger blommande kalkhedar, orkidéer och ett rikt växtliv anpassat till tunna jordar och saltstänk.
+history:
+  section:
+    kicker: Historia
+    title: Ett kulturlandskap format av hav, bete och naturvård
+    intro: Lilla Karlsö har länge använts för bete och naturstudier, och öns karaktär är nära knuten till detta brukande.
+    body:
+      - Fårens närvaro har under århundraden hållit markerna öppna. Det är en förutsättning för många av de växter och miljöer som i dag uppfattas som typiska för ön.
+      - Under 1900-talet förstärktes naturvårdsarbetet och ön kom att bli en plats där skydd, forskning och varsam tillgänglighet måste balanseras mot varandra.
+  timeline:
+    - year: Förhistorisk tid till 1800-tal
+      title: Beteslandskapet etableras
+      text: Långvarigt bete formar öns öppna kalkmarker och bidrar till den säregna flora som finns kvar än i dag.
+    - year: 1900-talet
+      title: Naturstudier och skydd
+      text: Fågelliv, flora och geologi blir centrala skäl till att vårda ön som ett skyddsvärt natur- och kulturlandskap.
+    - year: I dag
+      title: Besök under försiktighet
+      text: Tillgången till ön planeras med hänsyn till väder, häckande fåglar och ett mycket känsligt klint- och beteslandskap.
+about:
+  section:
+    kicker: Förvaltning
+    title: Ett reservat för lärande, varsam turism och långsiktigt skydd
+    intro: Webbplatsen är tänkt som ett digitalt besökscentrum där informationen ska vara enkel att förvalta men stadig över tid.
+    body:
+      - Lilla Karlsö behöver inte ett innehållstungt publiceringssystem. Informationen består främst av besöksråd, säsongsöppning, båttrafik och tolkande natur- och kulturtexter.
+      - Därför fungerar en statisk struktur väl. Den är snabb, robust och lätt att uppdatera inför varje säsong utan teknisk driftmiljö.
+  stewardship:
+    - title: Låg driftbelastning
+      text: Sidan är byggd för statisk publicering och kan distribueras direkt till enkel delad hosting.
+    - title: Begripliga uppdateringar
+      text: Årliga ändringar som båttider, öppningsdatum och kortare textjusteringar ligger i tydliga innehållsfiler.
+    - title: Trovärdig presentation
+      text: Färre rörliga delar ger bättre stabilitet för ett reservat som ska kännas officiellt och långsiktigt.
+map:
+  title: Orientera dig före avfärd
+  intro: Ön är liten men upplevelsen påverkas mycket av angöring, väder, stigar och utsiktspunkter. Kartsektionen ger en lätt överblick snarare än avancerad GIS-funktionalitet.
+  points:
+    - name: Djupviks hamn
+      type: Avresepunkt
+      description: Båtturer utgår normalt från Djupvik på Ekstakusten, med väder och sjöläge som avgörande faktor.
+    - name: Landstigningsplats
+      type: Angöring
+      description: Tilläggning kan vara känslig vid västliga vindar även när övriga förhållanden ser goda ut.
+    - name: Klintleden
+      type: Vandring
+      description: Stigen leder genom öppna marker och nära flera utsiktspunkter, men kräver varsamhet i ojämn terräng.
+    - name: Fågelbergets utsikt
+      type: Utsikt
+      description: En av de starkaste vyerna över kolonier, hav och klintar, särskilt under försommarens ljus.
+contact:
+  title: Kontakt och frågor
+  intro: Använd kontaktvägarna för bokning, reservatsfrågor eller säsongsuppdateringar inför besök.
+  details:
+    - label: Besöksutgångspunkt
+      value: Djupvik, Eksta socken, Gotland
+    - label: E-post
+      value: info@lillakarlso.se
+      href: mailto:info@lillakarlso.se
+    - label: Telefon
+      value: +46 (0)498 00 00 00
+      href: tel:+46498000000

@@ -1,0 +1,15 @@
+banner:
+  enabled: true
+  status: yellow
+  title: Boat access can change quickly in westerly winds
+  body: Check the weather and boat status again on the morning of departure. Even when the broader forecast looks favourable, docking may still be difficult in west, southwest, or northwest winds.
+cards:
+  - status: green
+    title: Planned summer season
+    body: Guided tours and day visits are published annually and updated in good time before the main season.
+  - status: yellow
+    title: Nesting-season care
+    body: Parts of the island may use stricter movement guidance in spring and early summer when birdlife is most sensitive.
+  - status: red
+    title: Severe wind or rough sea
+    body: Departures may be cancelled at short notice in strong winds even if earlier planning suggested a normal trip.

@@ -1,0 +1,79 @@
+{
+  "site": {
+    "name": "Lilla Karlsö Nature Reserve",
+    "brand": "Lilla Karlsö",
+    "tagline": "A digital visitor centre for a Gotland seabird island"
+  },
+  "common": {
+    "discover": "Discover the island",
+    "planVisit": "Plan your visit",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "seasonalUpdate": "Seasonal information",
+    "lastUpdated": "Last updated",
+    "forecast": "Forecast",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "practicalInformation": "Practical information",
+    "openingHours": "Opening season",
+    "mapTitle": "Visitor map"
+  },
+  "routes": {
+    "home": "Home",
+    "visit": "Visit the Island",
+    "weather": "Weather & Boat Conditions",
+    "tours": "Guided Tours",
+    "nature": "Nature & Wildlife",
+    "history": "History & Culture",
+    "safety": "Safety Information",
+    "seasons": "Seasonal Information",
+    "about": "About Lilla Karlsö",
+    "contact": "Contact"
+  },
+  "navigation": {
+    "overview": "Overview",
+    "visit": "Plan your visit",
+    "nature": "Learn about the island",
+    "culture": "Culture",
+    "information": "Information",
+    "weather": "Weather",
+    "tours": "Tours",
+    "involved": "Get involved",
+    "alerts": "Alerts",
+    "map": "Map",
+    "learn": "Learn",
+    "info": "Info",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language"
+  },
+  "weather": {
+    "title": "Island conditions",
+    "boatStatus": "Boat access",
+    "weatherOverview": "Weather overview",
+    "wind": "Wind",
+    "direction": "Direction",
+    "temperature": "Temperature",
+    "updated": "Updated",
+    "nextHours": "Next hours",
+    "liveData": "Live from SMHI",
+    "loading": "Fetching current forecast",
+    "fetchError": "Current forecast could not be loaded right now.",
+    "statusNormal": "Boat traffic is expected to operate normally.",
+    "statusCaution": "Conditions require additional assessment before departure.",
+    "statusCancelled": "Departures are likely to be cancelled.",
+    "dockingRisk": "Westerly winds increase docking risk at the island.",
+    "source": "SMHI Open Data",
+    "green": "Normal conditions",
+    "yellow": "Elevated risk",
+    "red": "High risk"
+  },
+  "footer": {
+    "addressTitle": "Visitor information",
+    "address": "Djupvik, west coast of Gotland, Sweden",
+    "follow": "Follow the work",
+    "facebook": "Facebook",
+    "note": "A static information website built for longevity, simple updates, and low maintenance.",
+    "copyright": "Lilla Karlsö Nature Reserve"
+  }
+}

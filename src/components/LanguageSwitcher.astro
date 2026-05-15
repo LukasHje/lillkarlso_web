@@ -1,0 +1,23 @@
+---
+import type { Locale } from "@/lib/i18n";
+import type { PageKey } from "@/lib/site";
+import { getLocaleUrl } from "@/lib/site";
+
+type Props = {
+  locale: Locale;
+  routeKey: PageKey;
+};
+
+const { locale, routeKey } = Astro.props;
+const targetLocale: Locale = locale === "sv" ? "en" : "sv";
+const label = locale === "sv" ? "English" : "Svenska";
+---
+
+<a
+  href={getLocaleUrl(targetLocale, routeKey)}
+  class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-fog transition hover:border-limestone/60 hover:bg-white/10"
+>
+  <span>{label}</span>
+  <span class="text-fog/50">/</span>
+  <span>{targetLocale.toUpperCase()}</span>
+</a>

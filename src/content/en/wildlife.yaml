@@ -1,0 +1,50 @@
+hero:
+  kicker: Nature & wildlife
+  title: Seabirds, limestone flora, and Baltic ecology make Lilla Karlsö a remarkably concentrated natural experience.
+  intro: Cliff colonies, shore processes, and open grazed ground come together in a landscape that is small in size but dense in ecological relationships.
+  image: /images/guillimot_on_cliff.jpg
+ecology:
+  kicker: Ecology
+  title: A reserve where wind, limestone, and grazing work together
+  intro: The island's richness is the result of several slow processes that are still active.
+  body:
+    - Limestone bedrock creates distinctive conditions for vegetation and supports drought-prone, nutrient-poor environments where specialized species can persist.
+    - The sea adds salt, moisture, and exposure, while grazing keeps the terrain open. The island's character depends on that combination.
+habitats:
+  - title: Limestone cliffs
+    text: The steep faces are both a geological signature and a nesting structure for thousands of birds.
+  - title: Alvar-like limestone ground
+    text: Thin soils and exposed rock create demanding but species-rich plant communities.
+  - title: Shore ridges and low plains
+    text: These areas show the relationship between sea level history, stone material, and vegetation.
+  - title: Grazed grassland
+    text: Open flowering surfaces support botanical values and preserve long sightlines across the plateau.
+species:
+  - name: Common guillemot
+    category: Seabird
+    summary: One of the reserve's defining species, breeding in dense concentrations along the cliff ledges.
+  - name: Razorbill
+    category: Seabird
+    summary: Often seen together with guillemots and an essential part of the soundscape above the bird cliffs.
+  - name: Orchids
+    category: Flora
+    summary: Limestone soils and open grazing create favourable conditions for a rich seasonal flowering display.
+  - name: Coastal insect life
+    category: Ecology
+    summary: Sunlit slopes, flower-rich patches, and low vegetation provide habitat for pollinators and other insects.
+  - name: Specialist limestone plants
+    category: Flora
+    summary: Localized plants reflect the island's geology, its long grazing continuity, and its relative isolation.
+  - name: Baltic coastal ecology
+    category: Marine environment
+    summary: Wind, salt, and the sea influence both the species and the visitor's entire perception of the island.
+conservation:
+  title: Conservation work
+  intro: Protection means preserving what is fragile today while also maintaining the processes that formed the landscape over time.
+  efforts:
+    - title: Nesting-season care
+      text: Access and visitor movement are adjusted to reduce disturbance during the most sensitive breeding periods.
+    - title: Continued grazing management
+      text: Open grazed land needs active stewardship if its structure and biodiversity are to remain.
+    - title: Clear visitor guidance
+      text: Good information reduces wear on the island and helps explain why some restrictions are necessary.

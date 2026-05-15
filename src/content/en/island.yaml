@@ -1,0 +1,95 @@
+hero:
+  kicker: Nature reserve in the Baltic Sea
+  title: Lilla Karlsö is a quiet seabird island of limestone cliffs, orchid meadows, and sea on every horizon.
+  intro: A visit here is a journey into an exposed and highly distinctive landscape where conservation, birdlife, and Gotland cultural history meet.
+  image: /images/lilla-karlso-topdown.jpg
+  cta:
+    label: Plan your visit
+    href: /en/visit/
+  secondaryCta:
+    label: View island conditions
+    href: /en/weather/
+overview:
+  kicker: The island
+  title: A spare landscape with unusual ecological richness
+  intro: Lilla Karlsö lies just off the west coast of Gotland and feels both remote and close at once.
+  body:
+    - The island is small in area but expansive in character. Its limestone plateau, steep cliffs, and low shore ridges create a place that changes quickly with light, wind, and season.
+    - Long grazing history has helped preserve open ground with orchids, juniper, alvar-like limestone surfaces, and flower-rich grasslands. At the same time, the seabird cliffs make Lilla Karlsö one of the most compelling nature experiences in the region.
+facts:
+  - label: Setting
+    value: About 3 km off the west coast of Gotland
+  - label: Highest point
+    value: 66 metres above sea level
+  - label: Landscape type
+    value: Limestone plateau, cliffs, and grazed alvar-like grassland
+  - label: Stewardship
+    value: Protected reserve landscape with a conservation focus
+highlights:
+  - title: Cliffs and sea stacks
+    text: Steep faces frame an open plateau shaped by limestone, weather, and the long movement of the Baltic Sea.
+  - title: Seabird ledges
+    text: During the nesting season, guillemots and razorbills fill the air with motion and sound.
+  - title: Botanical interest
+    text: Spring and early summer bring orchid displays and drought-adapted flora across the limestone grasslands.
+history:
+  section:
+    kicker: History
+    title: A cultural landscape shaped by sea, grazing, and conservation
+    intro: Lilla Karlsö has long been used for grazing and field study, and its identity is inseparable from that long stewardship.
+    body:
+      - Sheep grazing has kept the island open for generations. Many of the plants and habitats associated with the island depend on that continuity.
+      - During the twentieth century, conservation work became more formalized and the island emerged as a place where access, research, and habitat protection must remain carefully balanced.
+  timeline:
+    - year: Prehistory to the 1800s
+      title: The grazing landscape takes shape
+      text: Long-term grazing maintains open limestone ground and supports the flora that still defines the island today.
+    - year: 1900s
+      title: Scientific attention and protection
+      text: Birdlife, flora, and geology become central reasons for preserving the island as a protected landscape.
+    - year: Today
+      title: Access with restraint
+      text: Visits are planned around weather, nesting birds, and a highly sensitive mix of cliff terrain and grazed habitats.
+about:
+  section:
+    kicker: Stewardship
+    title: A reserve for learning, careful tourism, and long-term protection
+    intro: The website is intended as a digital visitor centre where information remains easy to maintain yet stable over time.
+    body:
+      - Lilla Karlsö does not need a content-heavy publishing system. Most updates concern seasonal opening, boat traffic, visitor guidance, and a limited set of interpretive texts.
+      - That makes a static architecture appropriate. It is fast, robust, and simple to update before each season without ongoing infrastructure.
+  stewardship:
+    - title: Low operational burden
+      text: The site is built for static deployment and can be published directly to simple shared hosting.
+    - title: Clear annual updates
+      text: Boat schedules, opening dates, and short text revisions live in structured content files.
+    - title: Trustworthy presentation
+      text: Fewer moving parts support a more official, stable experience for a long-lived reserve website.
+map:
+  title: Orient yourself before departure
+  intro: The island is small, but the experience is strongly shaped by landing conditions, weather, paths, and viewpoints. The map offers a light orientation rather than a full GIS system.
+  points:
+    - name: Djupvik harbour
+      type: Departure point
+      description: Boat departures normally leave from Djupvik on the west coast of Gotland, subject to weather and sea state.
+    - name: Landing area
+      type: Docking
+      description: Even when the broader forecast appears calm, landing can be sensitive in westerly winds.
+    - name: Cliff path
+      type: Walking route
+      description: The main route crosses open ground and several viewpoints and requires care on uneven terrain.
+    - name: Seabird outlook
+      type: Viewpoint
+      description: One of the strongest views over the colonies, cliffs, and open Baltic horizon.
+contact:
+  title: Contact and enquiries
+  intro: Use these contact routes for bookings, reserve questions, or seasonal updates before visiting.
+  details:
+    - label: Visitor departure point
+      value: Djupvik, Eksta parish, Gotland
+    - label: Email
+      value: info@lillakarlso.se
+      href: mailto:info@lillakarlso.se
+    - label: Phone
+      value: +46 (0)498 00 00 00
+      href: tel:+46498000000

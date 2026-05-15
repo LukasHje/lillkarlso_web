@@ -1,0 +1,52 @@
+hero:
+  kicker: Seasons
+  title: The season determines not only when you can travel, but how the island is experienced.
+  intro: Lilla Karlsö changes sharply between spring birdlife, high-summer light, and the quieter rhythm of late season.
+  image: /images/gotland_lilla_karlso_winter.jpg
+overview:
+  kicker: Seasonal rhythm
+  title: One place, different conditions
+  intro: Visitor value follows the calendar of nature. Seasonal opening, weather, and visitor guidance should always be read together.
+  body:
+    - Spring and early summer offer the most intense nature experience, but also the most sensitive period for birds and access.
+    - High summer often brings more stable logistics, while late summer offers calmer light and a stronger sense of distance.
+seasons:
+  - title: Spring and early summer
+    months: April-June
+    status: yellow
+    summary: High ecological value, dramatic birdlife, and weather that can quickly reshape the day's plan.
+    highlights:
+      - Active seabird colonies
+      - Orchids and flowering limestone ground
+      - Increased need for nesting-season care
+  - title: High summer
+    months: July-August
+    status: green
+    summary: The most accessible period for many visitors, while the sea still remains the decisive factor.
+    highlights:
+      - Long bright days
+      - Strong opportunities for guided visits
+      - Drier paths and clear visibility
+  - title: Late summer and early autumn
+    months: September
+    status: yellow
+    summary: A quieter atmosphere, crisp air, and fewer visitors, but greater variability in wind and sea state.
+    highlights:
+      - Calmer overall atmosphere
+      - Excellent light across the cliffs
+      - Shorter planning windows for departures
+  - title: Low season
+    months: October-March
+    status: red
+    summary: Regular visitor operations are normally not running and the island should be considered inaccessible for standard tourism.
+    highlights:
+      - No ordinary excursion logistics
+      - More severe weather exposure
+      - Priority on habitat protection and seasonal recovery
+planning:
+  title: Plan around the rhythm
+  intro: The best visits combine a seasonal perspective with close attention to the forecast.
+  notes:
+    - Check each season when departures begin and how bookings are structured that year.
+    - Do not assume that a warm day means easy access; wind conditions still control the landing.
+    - Always read the current alert banner for access notes, guidance changes, or reserve measures.

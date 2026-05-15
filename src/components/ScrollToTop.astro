@@ -1,0 +1,32 @@
+<button
+  type="button"
+  class="fixed bottom-6 right-6 z-50 hidden h-12 w-12 items-center justify-center rounded-full border border-white/14 bg-night/88 text-fog shadow-[0_18px_40px_rgba(0,0,0,0.26)] backdrop-blur-md transition hover:bg-night"
+  aria-label="Scroll to top"
+  data-scroll-top
+>
+  <svg viewBox="0 0 20 20" class="h-5 w-5" aria-hidden="true">
+    <path d="M10 15V5M10 5 5.5 9.5M10 5l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+  </svg>
+</button>
+
+<script>
+  const button = document.querySelector("[data-scroll-top]");
+
+  if (button instanceof HTMLButtonElement) {
+    const syncVisibility = () => {
+      if (window.scrollY > 540) {
+        button.classList.remove("hidden");
+        button.classList.add("inline-flex");
+      } else {
+        button.classList.add("hidden");
+        button.classList.remove("inline-flex");
+      }
+    };
+
+    syncVisibility();
+    window.addEventListener("scroll", syncVisibility, { passive: true });
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+</script>

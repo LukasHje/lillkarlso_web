@@ -1,0 +1,35 @@
+---
+type Props = {
+  title: string;
+  condition: string;
+  temperature: string;
+  wind: string;
+  updated: string;
+  windLabel?: string;
+  loading?: boolean;
+};
+
+const { title, condition, temperature, wind, updated, windLabel = "Wind", loading = false } = Astro.props;
+---
+
+<article class="panel relative overflow-hidden p-6">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(216,204,183,0.25),transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.22),rgba(255,255,255,0))]"></div>
+  <div class="relative">
+    <p class="section-kicker">{title}</p>
+    <div class="mt-5 flex items-end justify-between gap-6">
+      <div>
+        <p class="text-sm uppercase tracking-[0.22em] text-charcoal/55" data-weather-condition>{condition}</p>
+        <p class:list={["mt-3 font-serif text-5xl text-charcoal sm:text-6xl", loading && "rounded-xl text-transparent"]} data-loading={loading ? "true" : undefined} data-weather-temperature>
+          {temperature}
+        </p>
+      </div>
+      <div class="rounded-[1.5rem] border border-charcoal/8 bg-white/55 px-4 py-3 text-right">
+        <p class="text-xs uppercase tracking-[0.22em] text-charcoal/45">{windLabel}</p>
+        <p class:list={["mt-2 text-lg font-semibold text-charcoal", loading && "rounded-lg text-transparent"]} data-loading={loading ? "true" : undefined} data-weather-wind>
+          {wind}
+        </p>
+      </div>
+    </div>
+    <p class="mt-5 text-sm text-charcoal/55" data-weather-updated>{updated}</p>
+  </div>
+</article>

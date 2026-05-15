@@ -1,0 +1,33 @@
+---
+type Props = {
+  status: "green" | "yellow" | "red";
+  title: string;
+  body: string;
+};
+
+const { status, title, body } = Astro.props;
+
+const classes = {
+  green: "border-safe/25 bg-safe/12 text-forest",
+  yellow: "border-warning/30 bg-warning/12 text-charcoal",
+  red: "border-danger/30 bg-danger/12 text-charcoal"
+};
+
+const dots = {
+  green: "bg-safe",
+  yellow: "bg-warning",
+  red: "bg-danger"
+};
+---
+
+<div class:list={["panel border px-5 py-4", classes[status]]}>
+  <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+    <div class="flex items-start gap-3">
+      <span class:list={["status-dot mt-1", dots[status]]}></span>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em]">{title}</p>
+        <p class="mt-2 max-w-4xl text-sm leading-6 text-current/78">{body}</p>
+      </div>
+    </div>
+  </div>
+</div>

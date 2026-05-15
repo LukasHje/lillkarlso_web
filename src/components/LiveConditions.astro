@@ -1,0 +1,368 @@
+---
+import BoatStatusCard from "@/components/BoatStatusCard.astro";
+import WeatherCard from "@/components/WeatherCard.astro";
+import WindDirectionIndicator from "@/components/WindDirectionIndicator.astro";
+
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
+
+type AlertItem = {
+  status: "green" | "yellow" | "red";
+  title: string;
+  body: string;
+};
+
+type Props = {
+  locale: Locale;
+  sectionId?: string;
+  showForecast?: boolean;
+  variant?: "default" | "feature";
+  alerts?: AlertItem[];
+};
+
+const {
+  locale,
+  sectionId = "live-conditions",
+  showForecast = true,
+  variant = "default",
+  alerts = []
+} = Astro.props;
+
+const messages = t(locale);
+
+const statusCopy = {
+  red: locale === "sv" ? "Stängning" : "Closure",
+  yellow: locale === "sv" ? "Varning" : "Warning",
+  green: locale === "sv" ? "Information" : "Information"
+};
+
+const statusStyles = {
+  red: "border-danger/26 bg-danger/10 text-danger",
+  yellow: "border-warning/28 bg-warning/12 text-warning",
+  green: "border-sky-300/35 bg-sky-100/12 text-sky-100"
+};
+---
+
+{
+  variant === "feature" ? (
+    <section
+      id={sectionId}
+      class="overflow-hidden rounded-[2rem] bg-night text-fog shadow-[0_28px_80px_rgba(10,13,12,0.18)]"
+      data-live-conditions
+      data-locale={locale}
+      data-show-forecast={String(showForecast)}
+      data-live-variant={variant}
+    >
+      <div class="grid lg:grid-cols-[0.98fr_1.02fr]">
+        <div class="border-b border-white/10 px-6 py-8 sm:px-8 lg:border-b-0 lg:border-r lg:px-10 lg:py-10">
+          <p class="section-kicker text-limestone/75">{locale === "sv" ? "Aktuellt läge" : "Current conditions"}</p>
+          <h2 class="mt-4 font-serif text-4xl leading-none text-white sm:text-5xl">{messages.weather.title}</h2>
+          <p class="mt-5 max-w-xl text-base leading-7 text-fog/74">
+            {locale === "sv"
+              ? "Startsidan prioriterar dagens avgörande fråga: går det att lägga till och väntas turerna avgå normalt eller inte."
+              : "The homepage prioritizes the practical question first: can boats dock safely, and are departures likely to run or not."}
+          </p>
+
+          <div class="mt-8 grid gap-4">
+            {
+              alerts.map((item) => (
+                <article class="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
+                  <div class="flex items-start gap-4">
+                    <div class:list={["mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border", statusStyles[item.status]]}>
+                      {
+                        item.status === "red" ? (
+                          <svg viewBox="0 0 20 20" class="h-5 w-5" aria-hidden="true">
+                            <path d="M6 10h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                            <circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                          </svg>
+                        ) : item.status === "yellow" ? (
+                          <svg viewBox="0 0 20 20" class="h-5 w-5" aria-hidden="true">
+                            <path d="M10 4.1 16.2 15H3.8L10 4.1Zm0 3.4v3.8m0 2.1h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                        ) : (
+                          <svg viewBox="0 0 20 20" class="h-5 w-5" aria-hidden="true">
+                            <path d="M10 8.3v4.7M10 5.3h.01M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </svg>
+                        )
+                      }
+                    </div>
+                    <div>
+                      <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/55">{statusCopy[item.status]}</p>
+                      <h3 class="mt-2 text-xl font-semibold text-white">{item.title}</h3>
+                      <p class="mt-3 text-sm leading-6 text-fog/70">{item.body}</p>
+                    </div>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="bg-fog px-6 py-8 text-charcoal sm:px-8 lg:px-10 lg:py-10">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <span class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-charcoal">
+              <span class="status-dot bg-safe"></span>
+              {messages.weather.source}
+            </span>
+            <p class="text-sm text-charcoal/58" data-live-updated>{messages.weather.loading}</p>
+          </div>
+
+          <div class="mt-6">
+            <BoatStatusCard
+              title={messages.weather.boatStatus}
+              message={messages.weather.green}
+              detail={messages.weather.loading}
+              status="green"
+            />
+          </div>
+
+          <div class="mt-5 grid gap-5 lg:grid-cols-[1fr_0.78fr]">
+            <WeatherCard
+              title={messages.weather.weatherOverview}
+              condition={messages.weather.loading}
+              temperature="--"
+              wind="--"
+              updated={messages.weather.loading}
+              windLabel={messages.weather.wind}
+            />
+            <WindDirectionIndicator degrees={270} label="W" title={messages.weather.direction} />
+          </div>
+
+          <div class="mt-6 hidden rounded-[1.5rem] border border-danger/20 bg-danger/10 px-4 py-4 text-sm leading-6 text-charcoal" data-live-error>
+            {messages.weather.fetchError}
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-px border-t border-white/10 bg-white/10 sm:grid-cols-2 xl:grid-cols-5">
+        <div class="bg-night/88 px-5 py-5">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/48">{messages.weather.wind}</p>
+          <p class="mt-2 text-2xl font-semibold text-white" data-metric-wind>--</p>
+        </div>
+        <div class="bg-night/88 px-5 py-5">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/48">{messages.weather.direction}</p>
+          <p class="mt-2 text-2xl font-semibold text-white" data-metric-direction>--</p>
+        </div>
+        <div class="bg-night/88 px-5 py-5">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/48">{messages.weather.temperature}</p>
+          <p class="mt-2 text-2xl font-semibold text-white" data-metric-temperature>--</p>
+        </div>
+        <div class="bg-night/88 px-5 py-5">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/48">{messages.weather.weatherOverview}</p>
+          <p class="mt-2 text-xl font-semibold text-white" data-metric-condition>--</p>
+        </div>
+        <div class="bg-night/88 px-5 py-5">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-fog/48">{messages.weather.boatStatus}</p>
+          <p class="mt-2 text-xl font-semibold text-white" data-metric-boat>--</p>
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section
+      id={sectionId}
+      class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
+      data-live-conditions
+      data-locale={locale}
+      data-show-forecast={String(showForecast)}
+      data-live-variant={variant}
+    >
+      <div data-reveal>
+        <p class="section-kicker">{messages.weather.liveData}</p>
+        <h2 class="mt-4 section-title">{messages.weather.title}</h2>
+        <p class="mt-5 section-copy">
+          {locale === "sv"
+            ? "Vind, riktning och vädersymboler hämtas direkt från SMHI och tolkas mot öns känsliga angöringsläge."
+            : "Wind, direction, and forecast symbols are fetched directly from SMHI and interpreted against the island's exposed docking conditions."}
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-charcoal">
+            <span class="status-dot bg-safe"></span>
+            {messages.weather.source}
+          </span>
+          <p class="text-sm text-charcoal/55" data-live-updated>{messages.weather.loading}</p>
+        </div>
+        <div class="mt-8 hidden rounded-[1.5rem] border border-danger/25 bg-danger/10 px-4 py-4 text-sm leading-6 text-charcoal" data-live-error>
+          {messages.weather.fetchError}
+        </div>
+      </div>
+
+      <div class="grid gap-5" data-reveal style="animation-delay:120ms">
+        <BoatStatusCard
+          title={messages.weather.boatStatus}
+          message={messages.weather.green}
+          detail={messages.weather.loading}
+          status="green"
+        />
+        <div class="grid gap-5 lg:grid-cols-[1fr_0.78fr]">
+          <WeatherCard
+            title={messages.weather.weatherOverview}
+            condition={messages.weather.loading}
+            temperature="--"
+            wind="--"
+            updated={messages.weather.loading}
+            windLabel={messages.weather.wind}
+          />
+          <WindDirectionIndicator degrees={270} label="W" title={messages.weather.direction} />
+        </div>
+        {
+          showForecast && (
+            <div class="panel p-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p class="section-kicker">{messages.common.forecast}</p>
+                  <h3 class="mt-3 font-serif text-3xl text-charcoal">{messages.weather.nextHours}</h3>
+                </div>
+              </div>
+              <div class="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4" data-forecast-grid></div>
+            </div>
+          )
+        }
+      </div>
+    </section>
+  )
+}
+
+<script>
+  import {
+    assessBoatConditions,
+    fetchWeatherSnapshot,
+    formatWindDirection,
+    getWeatherLabel
+  } from "@/lib/weather/smhi";
+
+  document.querySelectorAll("[data-live-conditions]").forEach((root) => {
+    const locale = root.getAttribute("data-locale") === "sv" ? "sv" : "en";
+    const showForecast = root.getAttribute("data-show-forecast") === "true";
+    const localeTag = locale === "sv" ? "sv-SE" : "en-GB";
+    const updatedLabel = root.querySelector("[data-live-updated]");
+    const errorPanel = root.querySelector("[data-live-error]");
+    const weatherCondition = root.querySelector("[data-weather-condition]");
+    const weatherTemperature = root.querySelector("[data-weather-temperature]");
+    const weatherWind = root.querySelector("[data-weather-wind]");
+    const weatherUpdated = root.querySelector("[data-weather-updated]");
+    const boatBadge = root.querySelector("[data-boat-badge]");
+    const boatMessage = root.querySelector("[data-boat-message]");
+    const boatDetail = root.querySelector("[data-boat-detail]");
+    const boatDot = root.querySelector("[data-boat-dot]");
+    const windArrow = root.querySelector("[data-wind-arrow]");
+    const windLabel = root.querySelector("[data-wind-label]");
+    const forecastGrid = root.querySelector("[data-forecast-grid]");
+    const metricWind = root.querySelector("[data-metric-wind]");
+    const metricDirection = root.querySelector("[data-metric-direction]");
+    const metricTemperature = root.querySelector("[data-metric-temperature]");
+    const metricCondition = root.querySelector("[data-metric-condition]");
+    const metricBoat = root.querySelector("[data-metric-boat]");
+
+    const badgeClasses = {
+      green: "mt-4 inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] bg-safe/16 text-forest border-safe/20",
+      yellow: "mt-4 inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] bg-warning/16 text-charcoal border-warning/20",
+      red: "mt-4 inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] bg-danger/16 text-charcoal border-danger/20"
+    };
+
+    const dotClasses = {
+      green: "status-dot bg-safe",
+      yellow: "status-dot bg-warning",
+      red: "status-dot bg-danger"
+    };
+
+    const clearLoadingState = () => {
+      [weatherTemperature, weatherWind].forEach((element) => {
+        if (!(element instanceof HTMLElement)) return;
+        element.removeAttribute("data-loading");
+        element.classList.remove("text-transparent", "rounded-xl", "rounded-lg");
+      });
+    };
+
+    const formatTime = (value: string) =>
+      new Intl.DateTimeFormat(localeTag, {
+        hour: "2-digit",
+        minute: "2-digit",
+        day: "numeric",
+        month: "short"
+      }).format(new Date(value));
+
+    fetchWeatherSnapshot()
+      .then((snapshot) => {
+        clearLoadingState();
+
+        const current = snapshot.current;
+        const boat = assessBoatConditions(snapshot, locale);
+        const conditionText = getWeatherLabel(current.symbolCode, locale);
+        const directionText = `${formatWindDirection(current.windDirection, locale)} (${Math.round(current.windDirection)}°)`;
+
+        if (updatedLabel) {
+          updatedLabel.textContent = `${locale === "sv" ? "SMHI referenstid" : "SMHI reference time"}: ${formatTime(snapshot.referenceTime)}`;
+        }
+
+        if (weatherCondition) {
+          weatherCondition.textContent = conditionText;
+        }
+
+        if (weatherTemperature) {
+          weatherTemperature.textContent = `${Math.round(current.temperature)}°C`;
+        }
+
+        if (weatherWind) {
+          weatherWind.textContent = `${current.windSpeed.toFixed(1)} m/s`;
+        }
+
+        if (weatherUpdated) {
+          weatherUpdated.textContent = `${locale === "sv" ? "Uppdaterad" : "Updated"} ${formatTime(snapshot.referenceTime)}`;
+        }
+
+        if (boatBadge && boatMessage && boatDetail && boatDot) {
+          boatBadge.className = badgeClasses[boat.status];
+          boatDot.className = dotClasses[boat.status];
+          boatMessage.textContent = boat.headline;
+          boatDetail.textContent = boat.detail;
+        }
+
+        if (windArrow instanceof HTMLElement) {
+          windArrow.style.transform = `rotate(${current.windDirection}deg) translateX(-50%) translateY(-86%)`;
+        }
+
+        if (windLabel) {
+          windLabel.textContent = directionText;
+        }
+
+        if (metricWind) {
+          metricWind.textContent = `${current.windSpeed.toFixed(1)} m/s`;
+        }
+
+        if (metricDirection) {
+          metricDirection.textContent = directionText;
+        }
+
+        if (metricTemperature) {
+          metricTemperature.textContent = `${Math.round(current.temperature)}°C`;
+        }
+
+        if (metricCondition) {
+          metricCondition.textContent = conditionText;
+        }
+
+        if (metricBoat) {
+          metricBoat.textContent = boat.headline;
+        }
+
+        if (forecastGrid && showForecast) {
+          forecastGrid.innerHTML = snapshot.forecast.slice(1, 5).map((entry) => {
+            return `
+              <article class="rounded-[1.5rem] border border-charcoal/8 bg-white/60 px-4 py-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal/45">${formatTime(entry.time)}</p>
+                <p class="mt-3 font-serif text-3xl text-charcoal">${Math.round(entry.temperature)}°C</p>
+                <p class="mt-2 text-sm font-semibold text-charcoal">${entry.windSpeed.toFixed(1)} m/s ${formatWindDirection(entry.windDirection, locale)}</p>
+                <p class="mt-2 text-sm leading-6 text-charcoal/65">${getWeatherLabel(entry.symbolCode, locale)}</p>
+              </article>
+            `;
+          }).join("");
+        }
+      })
+      .catch((error) => {
+        console.error("Live conditions could not be loaded.", error);
+        if (errorPanel) {
+          errorPanel.classList.remove("hidden");
+        }
+      });
+  });
+</script>

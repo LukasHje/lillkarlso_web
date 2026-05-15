@@ -1,0 +1,170 @@
+@import "@fontsource-variable/manrope";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope Variable", "Avenir Next", "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  --color-night: #101412;
+  --color-charcoal: #18211d;
+  --color-forest: #254335;
+  --color-moss: #5f7966;
+  --color-limestone: #d8ccb7;
+  --color-fog: #e7e2d9;
+  --color-sand: #f3eee6;
+  --color-foam: #f8f6f2;
+  --color-warning: #d6a54a;
+  --color-danger: #c45f42;
+  --color-safe: #7da37a;
+
+  --shadow-atmospheric: 0 32px 90px rgba(9, 16, 13, 0.26);
+  --shadow-panel: 0 24px 60px rgba(11, 17, 15, 0.18);
+  --ease-quiet: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility container-shell {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    background:
+      radial-gradient(circle at top, rgba(216, 204, 183, 0.2), transparent 36%),
+      linear-gradient(180deg, #f6f1e8 0%, #f3eee6 46%, #f8f6f2 100%);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand text-charcoal font-sans antialiased;
+    background-attachment: fixed;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    @apply overflow-x-clip;
+  }
+
+  a,
+  button,
+  summary {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  input:focus-visible {
+    @apply ring-2 ring-limestone ring-offset-2 ring-offset-night;
+  }
+
+  ::selection {
+    background: rgba(37, 67, 53, 0.24);
+  }
+}
+
+@layer components {
+  .section-kicker {
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-moss;
+  }
+
+  .section-title {
+    @apply font-serif text-4xl leading-none text-charcoal sm:text-5xl lg:text-6xl;
+  }
+
+  .section-copy {
+    @apply max-w-3xl text-base leading-7 text-charcoal/80 sm:text-lg;
+  }
+
+  .panel {
+    @apply rounded-[2rem] border border-white/45 bg-white/70 backdrop-blur-xl;
+    box-shadow: var(--shadow-panel);
+  }
+
+  .panel-dark {
+    @apply rounded-[2rem] border border-white/10 bg-night/80 text-fog backdrop-blur-xl;
+    box-shadow: var(--shadow-atmospheric);
+  }
+
+  .status-dot {
+    @apply inline-flex h-3.5 w-3.5 rounded-full;
+    animation: pulse-glow 2.4s var(--ease-quiet) infinite;
+  }
+
+  .card-link {
+    @apply inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase text-forest transition hover:text-night;
+  }
+}
+
+@layer utilities {
+  .mask-soft {
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.72) 72%, transparent);
+  }
+
+  .bg-grain {
+    background-image:
+      linear-gradient(180deg, rgba(16, 20, 18, 0.06), rgba(16, 20, 18, 0.02)),
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 18%),
+      radial-gradient(circle at 80% 0%, rgba(216, 204, 183, 0.35), transparent 20%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .surface-shadow {
+    box-shadow: var(--shadow-atmospheric);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 0.78;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+[data-reveal] {
+  animation: fade-up 0.9s var(--ease-quiet) both;
+}
+
+[data-loading="true"] {
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}

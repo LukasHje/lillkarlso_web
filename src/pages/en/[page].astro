@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import RoutePage from "@/components/RoutePage.astro";
+import { getSiteContent } from "@/lib/content";
+import { resolvePageKey, type PageKey } from "@/lib/site";
+import { t } from "@/lib/i18n";
+
+export function getStaticPaths() {
+  return ["visit", "weather", "tours", "nature", "history", "safety", "seasons", "about", "contact"].map((page) => ({
+    params: { page }
+  }));
+}
+
+const pageKey = resolvePageKey("en", Astro.params.page) as Exclude<PageKey, "home"> | undefined;
+
+if (!pageKey) {
+  throw new Error("Unknown English route.");
+}
+
+const messages = t("en");
+const content = getSiteContent("en");
+const descriptions: Record<Exclude<PageKey, "home">, string> = {
+  visit: content.travelInfo.visit.overview.intro,
+  weather: "Current weather forecast, wind direction, and interpreted boat conditions for Lilla Karlsö.",
+  tours: content.tours.intro.intro,
+  nature: content.wildlife.ecology.intro,
+  history: content.island.history.section.intro,
+  safety: content.travelInfo.safety.overview.intro,
+  seasons: content.seasons.overview.intro,
+  about: content.island.about.section.intro,
+  contact: content.island.contact.intro
+};
+---
+
+<BaseLayout
+  locale="en"
+  routeKey={pageKey}
+  title={`Lilla Karlsö | ${messages.routes[pageKey]}`}
+  description={descriptions[pageKey]}
+>
+  <RoutePage locale="en" routeKey={pageKey} />
+</BaseLayout>

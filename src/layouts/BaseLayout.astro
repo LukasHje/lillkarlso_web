@@ -1,0 +1,61 @@
+---
+import Footer from "@/components/Footer.astro";
+import Navigation from "@/components/Navigation.astro";
+import ScrollToTop from "@/components/ScrollToTop.astro";
+import "@/styles/global.css";
+
+import type { Locale } from "@/lib/i18n";
+import type { PageKey } from "@/lib/site";
+import { getAlternateLanguageLinks, getLocaleUrl, siteMeta } from "@/lib/site";
+
+type Props = {
+  locale: Locale;
+  routeKey: PageKey;
+  title: string;
+  description: string;
+};
+
+const { locale, routeKey, title, description } = Astro.props;
+const canonical = new URL(getLocaleUrl(locale, routeKey), Astro.site);
+const alternates = getAlternateLanguageLinks(routeKey).map((item) => ({
+  ...item,
+  href: new URL(item.href, Astro.site).toString()
+}));
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.toString()} />
+    {
+      alternates.map((alternate) => (
+        <link rel="alternate" hreflang={alternate.locale} href={alternate.href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL("/sv/", Astro.site).toString()} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={new URL(siteMeta.image, Astro.site).toString()} />
+    <meta name="theme-color" content="#101412" />
+  </head>
+  <body>
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute left-[-10%] top-[-8rem] h-72 w-72 rounded-full bg-limestone/20 blur-3xl"></div>
+      <div class="absolute right-[-8%] top-[18rem] h-96 w-96 rounded-full bg-forest/10 blur-3xl"></div>
+      <div class="absolute inset-x-0 bottom-[-20rem] h-[40rem] bg-[radial-gradient(circle_at_center,rgba(37,67,53,0.12),transparent_48%)]"></div>
+    </div>
+
+    <Navigation locale={locale} routeKey={routeKey} />
+    <main>
+      <slot />
+    </main>
+    <Footer locale={locale} />
+    <ScrollToTop />
+  </body>
+</html>
