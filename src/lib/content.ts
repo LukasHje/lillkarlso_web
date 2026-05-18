@@ -179,17 +179,13 @@ const wildlifeSchema = z.object({
 });
 
 const alertsSchema = z.object({
-  banner: z.object({
-    enabled: z.boolean(),
-    status: z.enum(["green", "yellow", "red"]),
-    title: z.string(),
-    body: z.string()
-  }),
-  cards: z.array(
+  items: z.array(
     z.object({
-      status: z.enum(["green", "yellow", "red"]),
+      level: z.enum(["closure", "caution", "information"]),
       title: z.string(),
-      body: z.string()
+      body: z.string(),
+      posted: z.string(),
+      locations: z.array(z.string())
     })
   )
 });

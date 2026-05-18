@@ -1,12 +1,14 @@
 ---
-import HeroBanner from "@/components/HeroBanner.astro";
+import HomeAlertsPanel from "@/components/HomeAlertsPanel.astro";
 import IslandFacts from "@/components/IslandFacts.astro";
-import LiveConditions from "@/components/LiveConditions.astro";
 import MapSection from "@/components/MapSection.astro";
+import ParkHeaderHero from "@/components/ParkHeaderHero.astro";
+import ParkUtilityNav from "@/components/ParkUtilityNav.astro";
 import SeasonalStatus from "@/components/SeasonalStatus.astro";
 import TourCard from "@/components/TourCard.astro";
 import WildlifeGrid from "@/components/WildlifeGrid.astro";
 
+import { getAlertSummary } from "@/lib/alerts";
 import type { Locale } from "@/lib/i18n";
 import { t } from "@/lib/i18n";
 import { getSiteContent } from "@/lib/content";
@@ -19,52 +21,71 @@ type Props = {
 const { locale } = Astro.props;
 const messages = t(locale);
 const content = getSiteContent(locale);
+const alertsPageHref = getLocaleUrl(locale, "weather");
+const alertSummary = getAlertSummary(content.alerts.items);
+const alertCount = alertSummary.count;
 ---
 
-<HeroBanner
-  kicker={content.island.hero.kicker}
-  title={content.island.hero.title}
-  intro={content.island.hero.intro}
+<ParkHeaderHero
+  locale={locale}
+  title={messages.site.brand}
+  designation={locale === "sv" ? "Naturreservat" : "Nature Reserve"}
+  location={locale === "sv" ? "Gotland, Sverige" : "Gotland, Sweden"}
   image={content.island.hero.image}
-  cta={content.island.hero.cta}
-  secondaryCta={content.island.hero.secondaryCta}
 />
+<ParkUtilityNav locale={locale} routeKey="home" alertCount={alertCount} />
 
-<div class="container-shell">
-  <div class="-mt-10 space-y-20 pb-8 sm:-mt-14 lg:-mt-18">
-    <LiveConditions
-      locale={locale}
-      sectionId={`home-conditions-${locale}`}
-      showForecast={false}
-      variant="feature"
-      alerts={content.alerts.cards}
-    />
+<div class="bg-foam">
+  <section class="border-b border-charcoal/12 py-4 sm:py-5">
+    <div class="container-shell">
+      <HomeAlertsPanel locale={locale} alerts={content.alerts.items} href={alertsPageHref} />
+    </div>
+  </section>
 
-    <section class="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell">
+      <h1 class="text-[3.2rem] font-semibold leading-none tracking-[-0.04em] text-charcoal sm:text-[4rem]">
+        {locale === "sv" ? "Ett av Östersjöns mest särpräglade fågelberg" : "One of the Baltic Sea's most distinctive seabird reserves"}
+      </h1>
+      <p class="mt-6 max-w-6xl text-[1.18rem] leading-10 text-charcoal/88">
+        {content.island.overview.body[0]} {content.island.overview.body[1]}
+      </p>
+    </div>
+  </section>
+
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
       <div>
         <p class="section-kicker">{messages.routes.about}</p>
         <h2 class="mt-4 section-title">{content.island.overview.title}</h2>
         <p class="mt-5 section-copy">{content.island.overview.intro}</p>
-        <div class="mt-8 space-y-4">
+        <div class="mt-6 space-y-4">
           {content.island.overview.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
         </div>
       </div>
-      <div class="overflow-hidden rounded-[2rem] shadow-[0_28px_80px_rgba(15,20,18,0.16)]">
-        <img src="/images/cabins_lilla_karlso_sunset.jpg" alt={locale === "sv" ? "Strandhus och klint vid Lilla Karlsö i kvällsljus." : "Shore cabins and cliff edge on Lilla Karlsö at dusk."} class="h-full w-full object-cover" loading="lazy" />
+      <div class="grid gap-5">
+        <div class="overflow-hidden border border-charcoal/12">
+          <img src="/images/cabins_lilla_karlso_sunset.jpg" alt={locale === "sv" ? "Strandhus och klint vid Lilla Karlsö i kvällsljus." : "Shore cabins and cliff edge on Lilla Karlsö at dusk."} class="h-[20rem] w-full object-cover" loading="lazy" />
+        </div>
+        <IslandFacts facts={content.island.facts} />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="space-y-8">
-      <div class="max-w-3xl">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell space-y-8">
+      <div class="max-w-4xl">
         <p class="section-kicker">{messages.common.seasonalUpdate}</p>
         <h2 class="mt-4 section-title">{content.seasons.overview.title}</h2>
         <p class="mt-5 section-copy">{content.seasons.overview.intro}</p>
       </div>
       <SeasonalStatus items={content.seasons.seasons} />
-    </section>
+    </div>
+  </section>
 
-    <section class="space-y-8">
-      <div class="max-w-3xl">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell space-y-8">
+      <div class="max-w-4xl">
         <p class="section-kicker">{messages.routes.tours}</p>
         <h2 class="mt-4 section-title">{content.tours.intro.title}</h2>
         <p class="mt-5 section-copy">{content.tours.intro.intro}</p>
@@ -73,33 +94,37 @@ const content = getSiteContent(locale);
         {content.tours.tours.map((tour) => <TourCard tour={tour} />)}
       </div>
       <a href={getLocaleUrl(locale, "tours")} class="card-link">{messages.common.readMore}</a>
-    </section>
+    </div>
+  </section>
 
-    <section class="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
       <div>
         <p class="section-kicker">{messages.routes.nature}</p>
         <h2 class="mt-4 section-title">{content.wildlife.ecology.title}</h2>
         <p class="mt-5 section-copy">{content.wildlife.ecology.intro}</p>
-        <div class="mt-8 space-y-4">
+        <div class="mt-6 space-y-4">
           {content.wildlife.ecology.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
         </div>
       </div>
       <div class="space-y-5">
-        <div class="overflow-hidden rounded-[2rem] shadow-[0_28px_80px_rgba(15,20,18,0.12)]">
+        <div class="overflow-hidden border border-charcoal/12">
           <img src="/images/razorbill_on_cliff.jpg" alt={locale === "sv" ? "Tordmular på kalkklint vid havet." : "Razorbills resting on a limestone cliff above the sea."} class="h-[19rem] w-full object-cover" loading="lazy" />
         </div>
         <WildlifeGrid items={content.wildlife.species.slice(0, 3)} />
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
       <div>
         <p class="section-kicker">{messages.routes.history}</p>
         <h2 class="mt-4 section-title">{content.island.history.section.title}</h2>
         <p class="mt-5 section-copy">{content.island.history.section.intro}</p>
       </div>
       <div class="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
-        <div class="overflow-hidden rounded-[2rem] shadow-[0_28px_80px_rgba(15,20,18,0.12)]">
+        <div class="overflow-hidden border border-charcoal/12">
           <img src="/images/sudervagnhus_cave.jpg" alt={locale === "sv" ? "Kalkklint med grottöppning på Lilla Karlsö." : "Limestone cliff with cave opening on Lilla Karlsö."} class="h-full w-full object-cover" loading="lazy" />
         </div>
         <div class="grid gap-5">
@@ -112,10 +137,12 @@ const content = getSiteContent(locale);
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="space-y-8">
-      <div class="max-w-3xl">
+  <section class="border-b border-charcoal/10 py-10 sm:py-12">
+    <div class="container-shell space-y-8">
+      <div class="max-w-4xl">
         <p class="section-kicker">{messages.common.practicalInformation}</p>
         <h2 class="mt-4 section-title">{content.travelInfo.visit.overview.title}</h2>
         <p class="mt-5 section-copy">{content.travelInfo.visit.overview.intro}</p>
@@ -139,22 +166,17 @@ const content = getSiteContent(locale);
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="space-y-8">
-      <div class="max-w-3xl">
-        <p class="section-kicker">{messages.routes.about}</p>
-        <h2 class="mt-4 section-title">{content.island.about.section.title}</h2>
-        <p class="mt-5 section-copy">{content.island.about.section.intro}</p>
-      </div>
-      <IslandFacts facts={content.island.facts} />
-    </section>
-
-    <MapSection
-      sectionId="visit-map"
-      title={content.island.map.title}
-      intro={content.island.map.intro}
-      points={content.island.map.points}
-    />
-  </div>
+  <section class="py-10 sm:py-12">
+    <div class="container-shell">
+      <MapSection
+        sectionId="visit-map"
+        title={content.island.map.title}
+        intro={content.island.map.intro}
+        points={content.island.map.points}
+      />
+    </div>
+  </section>
 </div>

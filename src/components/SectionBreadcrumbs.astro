@@ -1,0 +1,19 @@
+---
+import type { Locale } from "@/lib/i18n";
+import { t } from "@/lib/i18n";
+import { getLocaleUrl } from "@/lib/site";
+
+type Props = {
+  locale: Locale;
+  currentLabel: string;
+};
+
+const { locale, currentLabel } = Astro.props;
+const messages = t(locale);
+---
+
+<nav class="text-[1.05rem] text-[#3f51b5]">
+  <a href={getLocaleUrl(locale, "home")} class="underline underline-offset-2">{messages.breadcrumbs.parkHome}</a>
+  <span class="px-2 text-charcoal/48">›</span>
+  <span class="text-charcoal">{currentLabel}</span>
+</nav>

@@ -35,8 +35,9 @@ export type NavigationGroup = {
 export type QuickAction = {
   label: string;
   href: string;
-  icon: "info" | "alerts" | "map" | "tours" | "contact";
+  icon: "info" | "alerts" | "weather" | "boat" | "map" | "tours";
   activeKeys: PageKey[];
+  badgeCount?: number;
   external?: boolean;
 };
 
@@ -172,13 +173,7 @@ export function getQuickActionLinks(locale: Locale): QuickAction[] {
       label: messages.navigation.alerts,
       href: getLocaleUrl(locale, "weather"),
       icon: "alerts",
-      activeKeys: ["weather", "seasons"]
-    },
-    {
-      label: messages.navigation.map,
-      href: `${getLocaleUrl(locale, "visit")}#visit-map`,
-      icon: "map",
-      activeKeys: ["visit"]
+      activeKeys: ["weather"]
     },
     {
       label: messages.routes.tours,
@@ -187,10 +182,10 @@ export function getQuickActionLinks(locale: Locale): QuickAction[] {
       activeKeys: ["tours"]
     },
     {
-      label: messages.routes.contact,
-      href: getLocaleUrl(locale, "contact"),
-      icon: "contact",
-      activeKeys: ["contact"]
+      label: messages.navigation.map,
+      href: `${getLocaleUrl(locale, "visit")}#visit-map`,
+      icon: "map",
+      activeKeys: ["visit"]
     }
   ];
 }

@@ -17,7 +17,7 @@ const { items } = Astro.props;
     items.map((item, index) => (
       <article class="panel p-6" data-reveal style={`animation-delay:${index * 80}ms`}>
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-moss">{item.category}</p>
-        <h3 class="mt-4 font-serif text-3xl text-charcoal">{item.name}</h3>
+        <h3 class="mt-4 text-2xl font-semibold tracking-[-0.03em] text-charcoal">{item.name}</h3>
         <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.summary}</p>
       </article>
     ))

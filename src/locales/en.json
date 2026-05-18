@@ -18,6 +18,38 @@
     "openingHours": "Opening season",
     "mapTitle": "Visitor map"
   },
+  "homeHero": {
+    "locationValue": "West coast of Gotland, Baltic Sea",
+    "statusLabel": "Operational status",
+    "statusRestricted": "Restricted access under active notice",
+    "statusCaution": "Elevated caution for today's visits",
+    "statusNormal": "Standard visitor operations",
+    "availabilityLabel": "Seasonal availability",
+    "availabilityValue": "Guided visits April-September",
+    "alertsLabel": "Active alerts",
+    "alertsValue": "{count} active notices",
+    "boatLabel": "Landing access",
+    "boatValue": "Weather-dependent boat traffic and docking"
+  },
+  "alerts": {
+    "inEffect": "Alerts in effect",
+    "pageTitle": "Current Conditions",
+    "pageIntro": "This page collects today's key closures, cautions, and visitor notices for Lilla Karlsö. The most severe alert appears first and the rest are ordered by urgency.",
+    "datePosted": "Date posted",
+    "viewAll": "View all alerts",
+    "moreAlerts": "{count} more alert notifications",
+    "moreNonEmergency": "{count} more non-emergency alert notifications",
+    "noneActive": "There are no active alerts right now. You should still check today's weather and boat status before travelling.",
+    "locationsTitle": "Alert Locations",
+    "locationSummary": "Affected areas",
+    "locationSummaryText": "These places recur in today's alerts and should be checked before travelling.",
+    "overviewTitle": "Overview"
+  },
+  "breadcrumbs": {
+    "parkHome": "Reserve Home",
+    "planYourVisit": "Plan Your Visit",
+    "basicInformation": "Basic Information"
+  },
   "routes": {
     "home": "Home",
     "visit": "Visit the Island",
@@ -38,6 +70,7 @@
     "information": "Information",
     "weather": "Weather",
     "tours": "Tours",
+    "boatTraffic": "Boat Traffic",
     "involved": "Get involved",
     "alerts": "Alerts",
     "map": "Map",

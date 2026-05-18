@@ -45,12 +45,6 @@ const alternates = getAlternateLanguageLinks(routeKey).map((item) => ({
     <meta name="theme-color" content="#101412" />
   </head>
   <body>
-    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div class="absolute left-[-10%] top-[-8rem] h-72 w-72 rounded-full bg-limestone/20 blur-3xl"></div>
-      <div class="absolute right-[-8%] top-[18rem] h-96 w-96 rounded-full bg-forest/10 blur-3xl"></div>
-      <div class="absolute inset-x-0 bottom-[-20rem] h-[40rem] bg-[radial-gradient(circle_at_center,rgba(37,67,53,0.12),transparent_48%)]"></div>
-    </div>
-
     <Navigation locale={locale} routeKey={routeKey} />
     <main>
       <slot />

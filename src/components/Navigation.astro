@@ -1,11 +1,8 @@
 ---
 import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
-import MegaMenu from "@/components/MegaMenu.astro";
-import MobileMenu from "@/components/MobileMenu.astro";
-
 import type { Locale } from "@/lib/i18n";
 import type { PageKey } from "@/lib/site";
-import { getLocaleUrl, getNavigationGroups, getQuickActionLinks } from "@/lib/site";
+import { getLocaleUrl } from "@/lib/site";
 import { t } from "@/lib/i18n";
 
 type Props = {
@@ -15,111 +12,19 @@ type Props = {
 
 const { locale, routeKey } = Astro.props;
 const messages = t(locale);
-const groups = getNavigationGroups(locale);
-const actions = getQuickActionLinks(locale);
-const currentPageHref = getLocaleUrl(locale, routeKey);
-
-function stripHash(value: string) {
-  return value.split("#")[0];
-}
-
-function iconMarkup(icon: "info" | "alerts" | "map" | "tours" | "contact") {
-  if (icon === "info") {
-    return '<path d="M10 8.5v5M10 5.25h.01M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>';
-  }
-
-  if (icon === "alerts") {
-    return '<path d="M10 3.2 17 16.8H3L10 3.2Zm0 4.2v4.2m0 2.2h.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>';
-  }
-
-  if (icon === "map") {
-    return '<path d="M10 17s4.5-4.6 4.5-8.1A4.5 4.5 0 1 0 5.5 8.9C5.5 12.4 10 17 10 17Zm0-6.3a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>';
-  }
-
-  if (icon === "tours") {
-    return '<path d="M4 5.5h12v10H4zM7 3.5v4M13 3.5v4M6.5 10h3M10.5 10h3M6.5 13h3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>';
-  }
-
-  return '<path d="M4 5h12v10H4zM6 7l4 3 4-3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>';
-}
 ---
 
-<header class="relative z-40">
-  <div class="bg-night text-fog">
-    <div class="container-shell flex items-center justify-between gap-4 py-5">
+<header class="relative z-40 bg-black text-white">
+  <div class="container-shell flex items-center justify-between gap-4 py-3">
+    <div class="flex items-center gap-4">
       <a href={getLocaleUrl(locale, "home")} class="shrink-0">
-        <p class="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-limestone/80">{messages.site.tagline}</p>
-        <p class="pt-2 font-serif text-[2.3rem] leading-none text-white">{messages.site.brand}</p>
+        <p class="text-[1.05rem] font-semibold text-white sm:text-[1.1rem]">Naturskyddsföreningen</p>
       </a>
-
-      <div class="hidden items-center gap-4 lg:flex">
-        <LanguageSwitcher locale={locale} routeKey={routeKey} />
-      </div>
-
-      <MobileMenu label={messages.navigation.menu} groups={groups}>
-        <div class="pt-1">
-          <LanguageSwitcher locale={locale} routeKey={routeKey} />
-        </div>
-      </MobileMenu>
+      <p class="hidden text-sm text-white/72 lg:block">{messages.site.brand}</p>
     </div>
-  </div>
 
-  <div class="container-shell">
-    <div class="relative -mt-px overflow-hidden rounded-b-[1.75rem] bg-black text-fog shadow-[0_26px_50px_rgba(8,12,11,0.18)]">
-      <div class="hidden items-stretch justify-between lg:flex" aria-label="Primary">
-        <nav class="flex items-stretch" aria-label="Primary">
-          {
-            groups.map((group) => (
-              <MegaMenu
-                title={group.title}
-                href={group.href}
-                items={group.items}
-                external={group.external}
-                active={group.items.some((item) => stripHash(item.href) === currentPageHref) || stripHash(group.href) === currentPageHref}
-              />
-            ))
-          }
-        </nav>
-
-        <div class="grid grid-cols-5 border-l border-white/10">
-          {
-            actions.map((action) => (
-              <a
-                href={action.href}
-                target={action.external ? "_blank" : undefined}
-                rel={action.external ? "noreferrer" : undefined}
-                class:list={[
-                  "flex min-w-[6.9rem] flex-col items-center justify-center gap-2 border-r border-white/10 px-4 py-4 text-center transition",
-                  action.activeKeys.includes(routeKey) ? "bg-white/10 text-white" : "text-fog/78 hover:bg-white/6 hover:text-white"
-                ]}
-              >
-                <span class="text-[0.68rem] font-semibold uppercase tracking-[0.18em]">{action.label}</span>
-                <svg viewBox="0 0 20 20" class="h-6 w-6" aria-hidden="true" set:html={iconMarkup(action.icon)} />
-              </a>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="border-t border-white/8 px-4 py-4 lg:hidden">
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-5">
-          {
-            actions.map((action) => (
-              <a
-                href={action.href}
-                target={action.external ? "_blank" : undefined}
-                rel={action.external ? "noreferrer" : undefined}
-                class="rounded-2xl border border-white/10 bg-white/4 px-3 py-3 text-center transition hover:bg-white/8"
-              >
-                <div class="mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/6 text-fog">
-                  <svg viewBox="0 0 20 20" class="h-5 w-5" aria-hidden="true" set:html={iconMarkup(action.icon)} />
-                </div>
-                <p class="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-fog/80">{action.label}</p>
-              </a>
-            ))
-          }
-        </div>
-      </div>
+    <div class="flex items-center gap-4">
+      <LanguageSwitcher locale={locale} routeKey={routeKey} />
     </div>
   </div>
 </header>

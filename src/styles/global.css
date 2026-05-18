@@ -9,20 +9,20 @@
   --font-sans: "Manrope Variable", "Avenir Next", "Segoe UI", sans-serif;
   --font-serif: "Cormorant Garamond", Georgia, serif;
 
-  --color-night: #101412;
-  --color-charcoal: #18211d;
-  --color-forest: #254335;
-  --color-moss: #5f7966;
-  --color-limestone: #d8ccb7;
-  --color-fog: #e7e2d9;
-  --color-sand: #f3eee6;
-  --color-foam: #f8f6f2;
-  --color-warning: #d6a54a;
-  --color-danger: #c45f42;
-  --color-safe: #7da37a;
+  --color-night: #161816;
+  --color-charcoal: #232722;
+  --color-forest: #39453d;
+  --color-moss: #687364;
+  --color-limestone: #d7cfbf;
+  --color-fog: #ebe6dd;
+  --color-sand: #f3efe6;
+  --color-foam: #fbf8f2;
+  --color-warning: #bc7a2c;
+  --color-danger: #a74e21;
+  --color-safe: #6d8b6b;
 
-  --shadow-atmospheric: 0 32px 90px rgba(9, 16, 13, 0.26);
-  --shadow-panel: 0 24px 60px rgba(11, 17, 15, 0.18);
+  --shadow-atmospheric: 0 18px 32px rgba(12, 14, 12, 0.12);
+  --shadow-panel: 0 10px 18px rgba(12, 14, 12, 0.06);
   --ease-quiet: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -33,9 +33,7 @@
 @layer base {
   :root {
     color-scheme: light;
-    background:
-      radial-gradient(circle at top, rgba(216, 204, 183, 0.2), transparent 36%),
-      linear-gradient(180deg, #f6f1e8 0%, #f3eee6 46%, #f8f6f2 100%);
+    background: #f3efe6;
   }
 
   html {
@@ -44,7 +42,6 @@
 
   body {
     @apply bg-sand text-charcoal font-sans antialiased;
-    background-attachment: fixed;
     text-rendering: optimizeLegibility;
   }
 
@@ -72,34 +69,33 @@
 
 @layer components {
   .section-kicker {
-    @apply text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-moss;
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-moss;
   }
 
   .section-title {
-    @apply font-serif text-4xl leading-none text-charcoal sm:text-5xl lg:text-6xl;
+    @apply font-sans text-3xl font-semibold leading-[1.02] tracking-[-0.03em] text-charcoal sm:text-4xl lg:text-[2.9rem];
   }
 
   .section-copy {
-    @apply max-w-3xl text-base leading-7 text-charcoal/80 sm:text-lg;
+    @apply max-w-3xl text-base leading-7 text-charcoal/80;
   }
 
   .panel {
-    @apply rounded-[2rem] border border-white/45 bg-white/70 backdrop-blur-xl;
+    @apply border border-charcoal/12 bg-white;
     box-shadow: var(--shadow-panel);
   }
 
   .panel-dark {
-    @apply rounded-[2rem] border border-white/10 bg-night/80 text-fog backdrop-blur-xl;
+    @apply border border-white/10 bg-night text-fog;
     box-shadow: var(--shadow-atmospheric);
   }
 
   .status-dot {
-    @apply inline-flex h-3.5 w-3.5 rounded-full;
-    animation: pulse-glow 2.4s var(--ease-quiet) infinite;
+    @apply inline-flex h-3 w-3 rounded-full;
   }
 
   .card-link {
-    @apply inline-flex items-center gap-2 text-sm font-semibold tracking-[0.18em] uppercase text-forest transition hover:text-night;
+    @apply inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] uppercase text-forest transition hover:text-night;
   }
 }
 
@@ -110,9 +106,8 @@
 
   .bg-grain {
     background-image:
-      linear-gradient(180deg, rgba(16, 20, 18, 0.06), rgba(16, 20, 18, 0.02)),
-      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 18%),
-      radial-gradient(circle at 80% 0%, rgba(216, 204, 183, 0.35), transparent 20%);
+      linear-gradient(180deg, rgba(16, 20, 18, 0.02), rgba(16, 20, 18, 0)),
+      linear-gradient(90deg, rgba(35, 39, 34, 0.04), rgba(35, 39, 34, 0.04));
   }
 
   .text-balance {
@@ -121,19 +116,6 @@
 
   .surface-shadow {
     box-shadow: var(--shadow-atmospheric);
-  }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  50% {
-    transform: scale(1.12);
-    opacity: 0.78;
   }
 }
 

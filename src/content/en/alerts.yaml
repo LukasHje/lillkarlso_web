@@ -1,15 +1,35 @@
-banner:
-  enabled: true
-  status: yellow
-  title: Boat access can change quickly in westerly winds
-  body: Check the weather and boat status again on the morning of departure. Even when the broader forecast looks favourable, docking may still be difficult in west, southwest, or northwest winds.
-cards:
-  - status: green
-    title: Planned summer season
-    body: Guided tours and day visits are published annually and updated in good time before the main season.
-  - status: yellow
-    title: Nesting-season care
-    body: Parts of the island may use stricter movement guidance in spring and early summer when birdlife is most sensitive.
-  - status: red
-    title: Severe wind or rough sea
-    body: Departures may be cancelled at short notice in strong winds even if earlier planning suggested a normal trip.
+items:
+  - level: closure
+    title: Temporary closure of the exposed western landing point
+    body: Westerly winds and swell are making the western landing too exposed for safe docking. Guided visits may need to shorten or reroute landings at short notice until conditions ease.
+    posted: "2026-05-12"
+    locations:
+      - Western landing point
+      - Cliff path
+  - level: caution
+    title: Nesting zones require stricter visitor routing
+    body: During the most sensitive nesting period, parts of the main route are adjusted to keep better distance from active bird ledges. Follow the day's signs and staff guidance.
+    posted: "2026-05-10"
+    locations:
+      - Seabird outlook
+      - Eastern plateau
+  - level: caution
+    title: Departures can change quickly in shifting westerly winds
+    body: Check the weather and boat status again on the morning of departure. Even when the broader forecast appears favourable, docking may still become difficult in west, southwest, or northwest winds.
+    posted: "2026-05-09"
+    locations:
+      - Djupvik harbour
+      - Landing area
+  - level: information
+    title: Seasonal guided visits are being published in stages
+    body: Guided tours and day visits for summer are updated gradually. Check current booking availability before travelling if you are planning a later visit in the season.
+    posted: "2026-05-08"
+    locations:
+      - Djupvik harbour
+  - level: information
+    title: Dry limestone ground can make paths uneven in afternoon sun
+    body: Paths remain open, but loose limestone gravel can become dry and slippery in strong sun and wind. Sturdy footwear is recommended even in otherwise calm weather.
+    posted: "2026-05-06"
+    locations:
+      - Cliff path
+      - Central plateau

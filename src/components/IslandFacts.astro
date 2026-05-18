@@ -16,7 +16,7 @@ const { facts } = Astro.props;
     facts.map((fact) => (
       <article class="panel bg-grain p-5">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal/45">{fact.label}</p>
-        <p class="mt-4 font-serif text-3xl leading-tight text-charcoal">{fact.value}</p>
+        <p class="mt-4 text-2xl font-semibold leading-tight tracking-[-0.03em] text-charcoal">{fact.value}</p>
       </article>
     ))
   }

@@ -1,10 +1,12 @@
 ---
-import AlertBanner from "@/components/AlertBanner.astro";
-import HeroBanner from "@/components/HeroBanner.astro";
+import AlertsDirectory from "@/components/AlertsDirectory.astro";
 import IslandFacts from "@/components/IslandFacts.astro";
 import LiveConditions from "@/components/LiveConditions.astro";
 import MapSection from "@/components/MapSection.astro";
+import ParkHeaderHero from "@/components/ParkHeaderHero.astro";
+import ParkUtilityNav from "@/components/ParkUtilityNav.astro";
 import SeasonalStatus from "@/components/SeasonalStatus.astro";
+import SectionBreadcrumbs from "@/components/SectionBreadcrumbs.astro";
 import TourCard from "@/components/TourCard.astro";
 import WildlifeGrid from "@/components/WildlifeGrid.astro";
 
@@ -22,58 +24,42 @@ type Props = {
 const { locale, routeKey } = Astro.props;
 const messages = t(locale);
 const content = getSiteContent(locale);
+const weatherAlertCount = content.alerts.items.length;
+const reserveDesignation = locale === "sv" ? "Naturreservat" : "Nature Reserve";
+const reserveLocation = locale === "sv" ? "Gotland, Sverige" : "Gotland, Sweden";
 
-const customHeroes = {
-  history: {
-    kicker: messages.routes.history,
-    title: content.island.history.section.title,
-    intro: content.island.history.section.intro,
-    image: "/images/sudervagnhus_cave.jpg"
-  },
-  weather: {
-    kicker: messages.routes.weather,
-    title:
-      locale === "sv"
-        ? "Live väderdata och tolkad båtstatus för ett väderkänsligt reservat."
-        : "Live weather data and interpreted boat status for an exposed island reserve.",
-    intro:
-      locale === "sv"
-        ? "Vindstyrka, vindriktning och dockningsrisk vägs samman för att ge en begriplig bild av dagens läge."
-        : "Wind speed, direction, and docking exposure are combined to produce a practical reading of today's conditions.",
-    image: "/images/gotland_lilla_karlso_winter.jpg"
-  },
-  safety: {
-    kicker: messages.routes.safety,
-    title: content.travelInfo.safety.overview.title,
-    intro: content.travelInfo.safety.overview.intro,
-    image: "/images/gotland_lilla_karlso_winter.jpg"
-  },
-  about: {
-    kicker: messages.routes.about,
-    title: content.island.about.section.title,
-    intro: content.island.about.section.intro,
-    image: "/images/lilla-karlso-topdown.jpg"
-  },
-  contact: {
-    kicker: messages.routes.contact,
-    title: content.island.contact.title,
-    intro: content.island.contact.intro,
-    image: "/images/basecamp_lilla_karlso.jpeg"
-  }
+const routeHeroImages = {
+  visit: content.travelInfo.hero.image,
+  weather: "/images/gotland_lilla_karlso_winter.jpg",
+  tours: content.tours.hero.image,
+  nature: content.wildlife.hero.image,
+  history: "/images/sudervagnhus_cave.jpg",
+  safety: "/images/gotland_lilla_karlso_winter.jpg",
+  seasons: content.seasons.hero.image,
+  about: "/images/lilla-karlso-topdown.jpg",
+  contact: "/images/basecamp_lilla_karlso.jpeg"
+} as const;
+
+const routeBreadcrumbLabels = {
+  visit: messages.navigation.visit,
+  weather: messages.alerts.pageTitle,
+  tours: messages.routes.tours,
+  nature: messages.routes.nature,
+  history: messages.routes.history,
+  safety: messages.routes.safety,
+  seasons: messages.routes.seasons,
+  about: messages.routes.about,
+  contact: messages.routes.contact
 } as const;
 ---
 
 {
   routeKey === "visit" && (
     <>
-      <HeroBanner
-        kicker={content.travelInfo.hero.kicker}
-        title={content.travelInfo.hero.title}
-        intro={content.travelInfo.hero.intro}
-        image={content.travelInfo.hero.image}
-        compact
-      />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.visit} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.visit} />
         <section id="visit-overview" class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
             <p class="section-kicker">{content.travelInfo.visit.overview.kicker}</p>
@@ -155,17 +141,11 @@ const customHeroes = {
 {
   routeKey === "weather" && (
     <>
-      <HeroBanner {...customHeroes.weather} compact />
-      <div class="container-shell space-y-18 py-16">
-        {
-          content.alerts.banner.enabled && (
-            <AlertBanner status={content.alerts.banner.status} title={content.alerts.banner.title} body={content.alerts.banner.body} />
-          )
-        }
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.weather} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <AlertsDirectory locale={locale} alerts={content.alerts.items} />
+      <div class="container-shell pb-16">
         <LiveConditions locale={locale} sectionId={`weather-page-${locale}`} />
-        <section class="grid gap-5 md:grid-cols-3">
-          {content.alerts.cards.map((item) => <AlertBanner status={item.status} title={item.title} body={item.body} />)}
-        </section>
       </div>
     </>
   )
@@ -174,14 +154,10 @@ const customHeroes = {
 {
   routeKey === "tours" && (
     <>
-      <HeroBanner
-        kicker={content.tours.hero.kicker}
-        title={content.tours.hero.title}
-        intro={content.tours.hero.intro}
-        image={content.tours.hero.image}
-        compact
-      />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.tours} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.tours} />
         <section class="max-w-3xl">
           <p class="section-kicker">{content.tours.intro.kicker}</p>
           <h2 class="mt-4 section-title">{content.tours.intro.title}</h2>
@@ -209,14 +185,10 @@ const customHeroes = {
 {
   routeKey === "nature" && (
     <>
-      <HeroBanner
-        kicker={content.wildlife.hero.kicker}
-        title={content.wildlife.hero.title}
-        intro={content.wildlife.hero.intro}
-        image={content.wildlife.hero.image}
-        compact
-      />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.nature} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.nature} />
         <section class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p class="section-kicker">{content.wildlife.ecology.kicker}</p>
@@ -263,8 +235,10 @@ const customHeroes = {
 {
   routeKey === "history" && (
     <>
-      <HeroBanner {...customHeroes.history} compact />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.history} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.history} />
         <section class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
           <div class="space-y-4">
             {content.island.history.section.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
@@ -299,8 +273,10 @@ const customHeroes = {
 {
   routeKey === "safety" && (
     <>
-      <HeroBanner {...customHeroes.safety} compact />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.safety} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.safety} />
         <section class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
           <div>
             <p class="section-kicker">{content.travelInfo.safety.overview.kicker}</p>
@@ -336,14 +312,10 @@ const customHeroes = {
 {
   routeKey === "seasons" && (
     <>
-      <HeroBanner
-        kicker={content.seasons.hero.kicker}
-        title={content.seasons.hero.title}
-        intro={content.seasons.hero.intro}
-        image={content.seasons.hero.image}
-        compact
-      />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.seasons} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.seasons} />
         <section class="max-w-3xl">
           <p class="section-kicker">{content.seasons.overview.kicker}</p>
           <h2 class="mt-4 section-title">{content.seasons.overview.title}</h2>
@@ -369,8 +341,10 @@ const customHeroes = {
 {
   routeKey === "about" && (
     <>
-      <HeroBanner {...customHeroes.about} compact />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.about} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.about} />
         <section class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
           <div>
             <p class="section-kicker">{content.island.about.section.kicker}</p>
@@ -398,8 +372,10 @@ const customHeroes = {
 {
   routeKey === "contact" && (
     <>
-      <HeroBanner {...customHeroes.contact} compact />
-      <div class="container-shell space-y-18 py-16">
+      <ParkHeaderHero locale={locale} title={messages.site.brand} designation={reserveDesignation} location={reserveLocation} image={routeHeroImages.contact} />
+      <ParkUtilityNav locale={locale} routeKey={routeKey} alertCount={weatherAlertCount} />
+      <div class="container-shell space-y-18 pb-16 pt-8 sm:pt-10">
+        <SectionBreadcrumbs locale={locale} currentLabel={routeBreadcrumbLabels.contact} />
         <section class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p class="section-kicker">{messages.routes.contact}</p>

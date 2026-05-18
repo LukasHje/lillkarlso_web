@@ -18,6 +18,38 @@
     "openingHours": "Öppningsperiod",
     "mapTitle": "Översiktskarta"
   },
+  "homeHero": {
+    "locationValue": "Ekstakusten, Gotland, Östersjön",
+    "statusLabel": "Driftstatus",
+    "statusRestricted": "Begränsad tillgång i driftmeddelande",
+    "statusCaution": "Förhöjd försiktighet för dagens besök",
+    "statusNormal": "Normal besöksinformation i drift",
+    "availabilityLabel": "Säsongstillgänglighet",
+    "availabilityValue": "Guidade besök april-september",
+    "alertsLabel": "Aktiva varningar",
+    "alertsValue": "{count} aktiva notiser",
+    "boatLabel": "Angöring",
+    "boatValue": "Väderberoende båttrafik och landstigning"
+  },
+  "alerts": {
+    "inEffect": "Varningar just nu",
+    "pageTitle": "Aktuella förhållanden",
+    "pageIntro": "Här samlas dagens viktigaste driftmeddelanden, avstängningar och informationsnotiser för Lilla Karlsö. Den allvarligaste händelsen visas först och resten sorteras efter betydelse.",
+    "datePosted": "Publicerad",
+    "viewAll": "Visa alla varningar",
+    "moreAlerts": "{count} fler varningsmeddelanden",
+    "moreNonEmergency": "{count} fler icke-akuta varningsmeddelanden",
+    "noneActive": "Det finns inga aktiva varningar just nu. Kontrollera ändå dagens väder och båtstatus före avresa.",
+    "locationsTitle": "Berörda platser",
+    "locationSummary": "Berörda områden",
+    "locationSummaryText": "De här platserna återkommer i dagens varningar och bör kontrolleras före besök.",
+    "overviewTitle": "Översikt"
+  },
+  "breadcrumbs": {
+    "parkHome": "Reservatets startsida",
+    "planYourVisit": "Planera besöket",
+    "basicInformation": "Grundläggande information"
+  },
   "routes": {
     "home": "Startsida",
     "visit": "Besök ön",
@@ -38,6 +70,7 @@
     "information": "Information",
     "weather": "Väder",
     "tours": "Turer",
+    "boatTraffic": "Båttrafik",
     "involved": "Engagera dig",
     "alerts": "Varningar",
     "map": "Karta",
