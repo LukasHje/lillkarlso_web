@@ -16,13 +16,7 @@ The project is currently being shaped as a reserve information system rather tha
 
 Current homepage screenshot:
 
-`public/images/readme-homepage.png`
-
-The visual snapshot file is not yet committed in the repository. Add a current screenshot at that path to have it render here automatically.
-
-<!-- Replace the placeholder above by committing the screenshot file and uncommenting this line:
 ![Homepage progress](public/images/readme-homepage.png)
--->
 
 ## Project Structure
 
