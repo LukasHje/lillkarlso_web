@@ -1,7 +1,7 @@
 hero:
   kicker: Naturreservat i Östersjön
-  title: Lilla Karlsö är ett stilla fågelberg med kalkklintar, orkidéängar och hav runt hela horisonten.
-  intro: Ett besök hit är en resa till ett öppet, väderutsatt och biologiskt särpräglat landskap där naturvård, fågelliv och gotländsk kulturhistoria möts.
+  title: Lilla Karlsö är ett fågelberg, ett naturreservat och ett kulturlandskap format av hav, kalk och bete.
+  intro: Utanför Gotlands västkust möts Sveriges enda fågelberg, långvarig naturvård, fornlämningar och ett landskap där hånnlamb fortfarande håller markerna öppna.
   image: /images/lilla-karlso-topdown.jpg
   cta:
     label: Planera ditt besök
@@ -10,21 +10,29 @@ hero:
     label: Se öförhållanden
     href: /sv/vader/
 overview:
-  kicker: Om ön
-  title: Ett kargt reservat med ovanligt rik mångfald
-  intro: Lilla Karlsö ligger strax utanför Gotlands västkust och upplevs både avskild och nära på samma gång.
+  kicker: Om reservatet
+  title: Ett skyddat fågelberg utanför Gotlands västkust
+  intro: Lilla Karlsö är ett av Östersjöns mest särpräglade naturreservat och tillsammans med Stora Karlsö Sveriges enda fågelberg.
   body:
-    - Ön är liten till ytan men stor i uttryck. Kalkstensplatån, de branta stupen och de låga strandvallarna skapar ett landskap som förändras snabbt med ljus, vind och årstid.
-    - Betet har präglat ön under lång tid och bidragit till öppna marker med orkidéer, enbuskar, alvarlika hällar och blomrika gräsytor. Samtidigt gör fågelbergen Lilla Karlsö till en av de mest fascinerande naturupplevelserna i regionen.
+    - Med storslagen klintkust, rik artmångfald, fornlämningar och ett landskap som formats av bete i tusentals år är ön både naturmiljö, kulturhistoriskt dokument och levande reservat.
+    - Sedan 1954 ägs och förvaltas Lilla Karlsö av Naturskyddsföreningen. Målet är att skydda öns natur- och kulturlandskap, följa hur naturen förändras och samtidigt ge människor möjlighet att uppleva platsen varsamt.
+geology:
+  kicker: Geologi och naturhistoria
+  title: En ö formad av hav och tid
+  intro: Lilla Karlsö är ett platåberg av kalksten som en gång var ett korallrev i det siluriska havet.
+  body:
+    - För omkring 400 miljoner år sedan täcktes området av ett varmt hav där koraller och andra marina organismer byggde upp de kalkstenslager som i dag bildar öns dramatiska klippor och platå.
+    - Spår från denna uråldriga värld finns kvar i form av fossiler i berget, medan dagens landskap samtidigt präglas av Östersjöns vindar, salt, erosion och tunna jordlager.
+    - Geologin är grunden för både växtlivet, klintformationerna och de fågelmiljöer som gjort Lilla Karlsö känt långt utanför Gotland.
 facts:
   - label: Lägesbild
-    value: Cirka 3 km från Gotlands västkust
+    value: Utanför Gotlands västkust, cirka 3 km från Djupvik
   - label: Högsta punkt
     value: 66 meter över havet
-  - label: Naturtyp
-    value: Kalkplatå, klintar och alvarbetesmark
+  - label: Skyddsform
+    value: Naturreservat sedan 1954 och Natura 2000-område
   - label: Förvaltning
-    value: Skyddad reservatsmiljö med naturvårdsfokus
+    value: Naturskyddsföreningen, med tillsyn och inventering på ön
 highlights:
   - title: Klintar och raukar
     text: Branta väst- och öststup möter ett öppet platålandskap med tydliga spår av havets och kalkens formkraft.
@@ -34,37 +42,62 @@ highlights:
     text: Vår och försommar ger blommande kalkhedar, orkidéer och ett rikt växtliv anpassat till tunna jordar och saltstänk.
 history:
   section:
-    kicker: Historia
-    title: Ett kulturlandskap format av hav, bete och naturvård
-    intro: Lilla Karlsö har länge använts för bete och naturstudier, och öns karaktär är nära knuten till detta brukande.
+    kicker: Kulturhistoria
+    title: Ett landskap med lång hävd och modern naturvård
+    intro: Lilla Karlsö bär spår av både uråldrig betesdrift och 1900-talets organiserade naturvård.
     body:
-      - Fårens närvaro har under århundraden hållit markerna öppna. Det är en förutsättning för många av de växter och miljöer som i dag uppfattas som typiska för ön.
-      - Under 1900-talet förstärktes naturvårdsarbetet och ön kom att bli en plats där skydd, forskning och varsam tillgänglighet måste balanseras mot varandra.
+      - Ön har betats av får i tusentals år och det öppna landskapet är ett resultat av en mycket lång kontinuitet, långt äldre än dagens reservatsgränser.
+      - Under 1900-talet blev Lilla Karlsö också en plats för systematiskt skydd, forskning, tillsyn och guidning, där skydd av fågelliv och varsam tillgänglighet måste balanseras varje säsong.
   timeline:
-    - year: Förhistorisk tid till 1800-tal
+    - year: Ca 400 miljoner år sedan
+      title: Korallrev blir kalkberg
+      text: Det siluriska havet lämnar efter sig de kalkstenslager och fossila spår som än i dag formar öns geologi.
+    - year: Minst 6 000 år tillbaka
       title: Beteslandskapet etableras
-      text: Långvarigt bete formar öns öppna kalkmarker och bidrar till den säregna flora som finns kvar än i dag.
-    - year: 1900-talet
-      title: Naturstudier och skydd
-      text: Fågelliv, flora och geologi blir centrala skäl till att vårda ön som ett skyddsvärt natur- och kulturlandskap.
+      text: Fårbete håller markerna öppna och skapar det kulturlandskap som många av öns växter och miljöer är beroende av.
+    - year: 1943-1954
+      title: Hånnlamb och reservat räddas
+      text: Konrad Hellsing bidrar till att bevara den gotländska lantrasen hånnlamb och Naturskyddsföreningen tar över ägande och förvaltning av ön.
     - year: I dag
-      title: Besök under försiktighet
-      text: Tillgången till ön planeras med hänsyn till väder, häckande fåglar och ett mycket känsligt klint- och beteslandskap.
+      title: Skydd, tillsyn och besök i balans
+      text: Inventeringar, naturvård och guidning bedrivs samtidigt som tillgången till ön styrs av väder, säsong och fågelskydd.
 about:
   section:
-    kicker: Förvaltning
-    title: Ett reservat för lärande, varsam turism och långsiktigt skydd
-    intro: Webbplatsen är tänkt som ett digitalt besökscentrum där informationen ska vara enkel att förvalta men stadig över tid.
+    kicker: Reservatsadministration
+    title: Ett skyddat naturreservat med långsiktig förvaltning
+    intro: Lilla Karlsö har varit naturreservat sedan 1954 och är även skyddat som Natura 2000-område.
     body:
-      - Lilla Karlsö behöver inte ett innehållstungt publiceringssystem. Informationen består främst av besöksråd, säsongsöppning, båttrafik och tolkande natur- och kulturtexter.
-      - Därför fungerar en statisk struktur väl. Den är snabb, robust och lätt att uppdatera inför varje säsong utan teknisk driftmiljö.
+      - Naturskyddsföreningen har personal på ön som inventerar djurliv och växtlighet, utövar tillsyn och visar besökare runt under säsongen.
+      - Information om föreskrifter, skötselplan och bevarandeplan för Natura 2000-området finns hos Länsstyrelsen Gotland, medan denna webbplats fungerar som reservatets praktiska besöks- och lägesportal.
+    links:
+      - label: Länsstyrelsen Gotland om Lilla Karlsö
+        href: https://www.lansstyrelsen.se/gotland/besoksmal/naturreservat/lilla-karlso.html?sv.target=12.382c024b1800285d5863a882&sv.12.382c024b1800285d5863a882.route=/&searchString=&counties=&municipalities=&reserveTypes=&natureTypes=&accessibility=&facilities=&sort=none
   stewardship:
-    - title: Låg driftbelastning
-      text: Sidan är byggd för statisk publicering och kan distribueras direkt till enkel delad hosting.
-    - title: Begripliga uppdateringar
-      text: Årliga ändringar som båttider, öppningsdatum och kortare textjusteringar ligger i tydliga innehållsfiler.
-    - title: Trovärdig presentation
-      text: Färre rörliga delar ger bättre stabilitet för ett reservat som ska kännas officiellt och långsiktigt.
+    - title: Naturreservat
+      text: Skyddet omfattar både fågelberg, flora, geologi och det öppna kulturlandskap som betet upprätthåller.
+    - title: Natura 2000
+      text: Reservatet ingår i EU:s nätverk av skyddade områden och har särskilda bevarandevärden som följs upp långsiktigt.
+    - title: Tillsyn och inventering
+      text: Personal på ön följer utvecklingen i djurliv och växtlighet och vägleder besökare under säsong.
+grazing:
+  section:
+    kicker: Beteslandskap och hånnlamb
+    title: Hånnlamben håller det historiska landskapet öppet
+    intro: En viktig del av Lilla Karlsös identitet är den ursprungliga besättningen av gotländskt behornat utegångsfår, hånnlamb.
+    body:
+      - Hånnlamben räddades från att försvinna av bankdirektören Konrad Hellsing år 1943. Hellsing var också Naturskyddsföreningens första ordförande på Gotland och spelade en avgörande roll för att bevara både rasen och öns öppna marker.
+      - Genom sitt bete håller fåren markerna öppna och bidrar till att många växter och naturtyper kan leva kvar. Betesdjuren är därför inte ett inslag vid sidan av naturvården utan en central del av den.
+      - Under vintern vistas fåren i Snoder på sydvästra Gotland men återvänder varje år till Lilla Karlsö, där de fortsätter en tradition av bete som går minst 6 000 år tillbaka.
+    links:
+      - label: Hånnlamb i Snoder
+        href: https://hannlamb.se/index.html
+  highlights:
+    - title: 6 000 år av bete
+      text: Det öppna landskapet är resultatet av en ovanligt lång kontinuitet av hävd, från de första bönderna till dagens naturvård.
+    - title: Konrad Hellsings insats
+      text: Bevarandet av hånnlamben knyter samman gotländsk lantrashistoria med reservatets moderna skyddshistoria.
+    - title: Säsongsflytt mellan Snoder och ön
+      text: Fårens årliga rörelse mellan vinterbete och sommarbete är fortfarande en praktisk del av hur landskapet sköts.
 map:
   title: Orientera dig före avfärd
   intro: Ön är liten men upplevelsen påverkas mycket av angöring, väder, stigar och utsiktspunkter. Kartsektionen ger en lätt överblick snarare än avancerad GIS-funktionalitet.
@@ -83,13 +116,16 @@ map:
       description: En av de starkaste vyerna över kolonier, hav och klintar, särskilt under försommarens ljus.
 contact:
   title: Kontakt och frågor
-  intro: Använd kontaktvägarna för bokning, reservatsfrågor eller säsongsuppdateringar inför besök.
+  intro: Använd kontaktvägarna för bokning, reservatsfrågor, privat angöring eller säsongsuppdateringar inför besök.
   details:
     - label: Besöksutgångspunkt
       value: Djupvik, Eksta socken, Gotland
     - label: E-post
-      value: info@lillakarlso.se
-      href: mailto:info@lillakarlso.se
-    - label: Telefon
-      value: +46 (0)498 00 00 00
-      href: tel:+46498000000
+      value: contact@gotlandseaguides.se
+      href: mailto:contact@gotlandseaguides.se
+    - label: Bokning
+      value: 070-236 34 30
+      href: tel:+46702363430
+    - label: Tillsynsman
+      value: 070-225 32 91
+      href: tel:+46702253291

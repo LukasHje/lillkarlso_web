@@ -1,6 +1,6 @@
 {
   "site": {
-    "name": "Lilla Karlsö Nature Reserve",
+    "name": "Lilla Karlsö Naturreservat",
     "brand": "Lilla Karlsö",
     "tagline": "Digitalt besökscentrum för ett gotländskt fågelberg"
   },
@@ -107,6 +107,7 @@
     "follow": "Följ arbetet",
     "facebook": "Facebook",
     "note": "Statisk informationswebb byggd för lång livslängd, enkel uppdatering och låg driftkostnad.",
-    "copyright": "Lilla Karlsö Nature Reserve"
+    "copyright": "Lilla Karlsö Naturreservat",
+    "builtBy": "Webbplatsen är byggd och förvaltas av"
   }
 }

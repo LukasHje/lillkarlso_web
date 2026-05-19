@@ -1,30 +1,62 @@
 hero:
   kicker: Besök
-  title: Besöket börjar på fastlandet, men avgörs av vind, sjö och säsong.
-  intro: Planera med marginal. Båttrafiken är väderberoende och ön saknar den infrastruktur som ofta finns på större besöksmål.
+  title: Besöket börjar i Djupvik och styrs av väder, båttrafik och reservatets säsong.
+  intro: Lilla Karlsö fungerar som ett väderkänsligt naturbesök med små grupper, förbokning och begränsad infrastruktur på ön.
   image: /images/basecamp_lilla_karlso.jpeg
 visit:
   overview:
     kicker: Planera resan
-    title: Praktiska råd för en trygg dagsutflykt
-    intro: Lilla Karlsö fungerar bäst som ett väl förberett naturbesök där enkel logistik, rätt klädsel och respekt för reservatet är utgångspunkten.
+    title: Besök ön som ett planerat reservatsbesök, inte som en spontan badutflykt
+    intro: Båtresan, landstigningen och vistelsen på ön kräver framförhållning, väderbedömning och respekt för att platsen är ett skyddat naturreservat.
     body:
-      - Kontrollera båtstatus och väder samma morgon. Vindriktning och vindstyrka påverkar tilläggning mer än många besökare först tror.
-      - Ta med vatten, vindskyddande lager och stabila skor. Serviceutbudet på ön är begränsat och terrängen kan vara ojämn, torr eller hal beroende på väder.
+      - Kontrollera aktuella notiser, väder och båttrafik samma morgon. Vindriktning och vindstyrka påverkar tilläggningen mer än många besökare först tror.
+      - Ta med vatten, vindskyddande lager och stabila skor. Verksamheten är inte handikappanpassad och terrängen kan vara ojämn, torr eller hal beroende på väder.
   practicalCards:
     - title: Föreskrifter
-      text: Reservatet kräver lågmält rörelsemönster, hänsyn till fågelliv och respekt för tillfälliga begränsningar.
+      text: Reservatet kräver lågmält rörelsemönster, hänsyn till fågelliv och respekt för tillfälliga begränsningar och skyddszoner.
     - title: Tillgänglighet
-      text: Landstigning och vandring sker i naturterräng utan jämna gångytor, vilket påverkar hur tillgängligt besöket är.
+      text: Guidad rundvandring och landstigning sker i naturterräng utan jämna gångytor och verksamheten är inte handikappanpassad.
     - title: Egen båt och kajak
-      text: Privat angöring bör bara ske med god lokalkännedom och efter noggrann bedömning av vindriktning, sjö och skyddszoner.
+      text: Privat angöring kräver kontakt i förväg så att personal kan ta emot dig och ge aktuell information inför besöket.
   steps:
-    - title: 1. Följ läget kvällen före
-      text: Titta på säsongsinformation och båtstatus för att förstå sannolikheten för normal trafik.
-    - title: 2. Kontrollera morgonens vindprognos
-      text: Särskilt sydvästliga och nordvästliga vindar kan snabbt ändra läget vid landstigningen.
+    - title: 1. Boka i tid
+      text: Förbokning och betalning krävs minst fyra dagar i förväg för reguljära turer.
+    - title: 2. Följ dagens lägesbild
+      text: Vind, sjö och operativa notiser avgör om landstigning och turupplägg kan genomföras som planerat.
     - title: 3. Kom redo för naturmark
-      text: Ön är ett reservat, inte en serviceanläggning. Egen förberedelse gör stor skillnad.
+      text: Besöket sker i ett exponerat reservat med begränsad service. Egen förberedelse gör stor skillnad.
+operations:
+  bookingWindow: Du kan boka resor under perioden 15 juni 2026-15 augusti 2026.
+  seasonWindow: Reguljär verksamhet genomförs vid lämpliga väderförhållanden under sommarsäsongen.
+  departure: Avgång kl. 09.00 från Djupvik.
+  returnTrip: Återresa och ankomst till Djupvik senast kl. 13.30.
+  weatherNotice: Resan erbjuds av Gotland Sea Guides i samarbete med Naturskyddsföreningen Gotland och genomförs bara när väder och sjöläge tillåter säker angöring.
+  pricingTitle: Turlista och priser 2026
+  pricing:
+    - "Pris per resa: 5 900 kr, max 6 personer."
+    - "Guidad rundvandring ingår i priset."
+    - "Exklusiva resor vid förfrågan från 7 900 kr, max 6 personer per båttur."
+  bookingTitle: Information och bokning
+  bookingDetails:
+    - label: E-post
+      value: contact@gotlandseaguides.se
+      href: mailto:contact@gotlandseaguides.se
+    - label: Mobiltelefon
+      value: 070-236 34 30
+      href: tel:+46702363430
+  bookingNotes:
+    - Förbokning och betalning krävs minst fyra dagar i förväg.
+    - Återbetalningsvillkor finns på Gotland Sea Guides webbplats.
+    - Små grupper och väderberoende avgångar är en del av reservatets praktiska förutsättningar.
+  privateBoat:
+    title: Besök med egen båt
+    intro: Privat angöring är möjlig men behöver samordnas med verksamheten på ön.
+    body:
+      - Under säsongen har vi regelbunden båttrafik till och från ön, vilket gör att plats för privata båtar inte alltid kan garanteras utan kontakt i förväg.
+      - Kontakta reservatet i god tid innan ankomst så att personal finns på plats för att ta emot dig och ge den information som behövs inför ditt besök.
+    contactLabel: Kontakt - tillsynsman
+    contactValue: 070-225 32 91
+    contactHref: tel:+46702253291
 safety:
   overview:
     kicker: Säkerhet

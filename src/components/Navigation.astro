@@ -17,7 +17,13 @@ const messages = t(locale);
 <header class="relative z-40 bg-black text-white">
   <div class="container-shell flex items-center justify-between gap-4 py-3">
     <div class="flex items-center gap-4">
-      <a href={getLocaleUrl(locale, "home")} class="shrink-0">
+      <a href={getLocaleUrl(locale, "home")} class="flex shrink-0 items-center gap-3">
+        <img
+          src="/images/nsf-logo-neg.webp"
+          alt="Naturskyddsföreningen"
+          class="h-9 w-9 object-contain"
+          loading="eager"
+        />
         <p class="text-[1.05rem] font-semibold text-white sm:text-[1.1rem]">Naturskyddsföreningen</p>
       </a>
       <p class="hidden text-sm text-white/72 lg:block">{messages.site.brand}</p>

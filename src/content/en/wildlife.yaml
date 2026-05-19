@@ -1,18 +1,18 @@
 hero:
   kicker: Nature & wildlife
-  title: Seabirds, limestone flora, and Baltic ecology make Lilla Karlsö a remarkably concentrated natural experience.
-  intro: Cliff colonies, shore processes, and open grazed ground come together in a landscape that is small in size but dense in ecological relationships.
+  title: Bird cliffs, limestone flora, and Baltic coastal ecology make Lilla Karlsö an unusually dense natural environment.
+  intro: Within a small area, the island contains seabird colonies, grazed limestone grassland, exposed Baltic habitats, and species that depend on very specific ecological conditions.
   image: /images/guillimot_on_cliff.jpg
 ecology:
   kicker: Ecology
-  title: A reserve where wind, limestone, and grazing work together
-  intro: The island's richness is the result of several slow processes that are still active.
+  title: A reserve where limestone, sea exposure, and grazing shape the living conditions
+  intro: The island's biological richness is the result of geology, salt exposure, long grazing continuity, and coastal climate working together.
   body:
-    - Limestone bedrock creates distinctive conditions for vegetation and supports drought-prone, nutrient-poor environments where specialized species can persist.
-    - The sea adds salt, moisture, and exposure, while grazing keeps the terrain open. The island's character depends on that combination.
+    - Limestone bedrock creates drought-prone, nutrient-poor environments where specialist plants can survive, including species associated with the Karlsö islands and other calcareous habitats.
+    - The sea adds salt, moisture, and exposure, while grazing keeps the terrain open. Together these processes create the bird cliffs, flowering grasslands, and long open views across the plateau.
 habitats:
   - title: Limestone cliffs
-    text: The steep faces are both a geological signature and a nesting structure for thousands of birds.
+    text: The steep faces are both a geological signature and a breeding structure for large concentrations of common guillemots and razorbills.
   - title: Alvar-like limestone ground
     text: Thin soils and exposed rock create demanding but species-rich plant communities.
   - title: Shore ridges and low plains
@@ -22,29 +22,29 @@ habitats:
 species:
   - name: Common guillemot
     category: Seabird
-    summary: One of the reserve's defining species, breeding in dense concentrations along the cliff ledges.
+    summary: One of the reserve's defining species, breeding in dense colonies along the cliff ledges.
   - name: Razorbill
     category: Seabird
-    summary: Often seen together with guillemots and an essential part of the soundscape above the bird cliffs.
-  - name: Orchids
+    summary: Often seen together with guillemots and a core part of the soundscape above the bird cliffs.
+  - name: Peregrine falcon
+    category: Raptor
+    summary: May be seen hunting above the sea and around the cliffs where breeding birds concentrate.
+  - name: Common eider
+    category: Seabird
+    summary: A characteristic coastal bird of the island's shore zones and nearby waters.
+  - name: Grey seal
+    category: Marine mammal
+    summary: Lives in the waters around the island and connects the bird cliff landscape to the wider marine ecosystem.
+  - name: Karlsö plants and limestone specialists
     category: Flora
-    summary: Limestone soils and open grazing create favourable conditions for a rich seasonal flowering display.
-  - name: Coastal insect life
-    category: Ecology
-    summary: Sunlit slopes, flower-rich patches, and low vegetation provide habitat for pollinators and other insects.
-  - name: Specialist limestone plants
-    category: Flora
-    summary: Localized plants reflect the island's geology, its long grazing continuity, and its relative isolation.
-  - name: Baltic coastal ecology
-    category: Marine environment
-    summary: Wind, salt, and the sea influence both the species and the visitor's entire perception of the island.
+    summary: Rare and localized plants reflect the island's geology, long grazing continuity, and relative isolation.
 conservation:
   title: Conservation work
-  intro: Protection means preserving what is fragile today while also maintaining the processes that formed the landscape over time.
+  intro: Protection means preserving what is fragile today while also maintaining the long processes that formed the landscape.
   efforts:
     - title: Nesting-season care
       text: Access and visitor movement are adjusted to reduce disturbance during the most sensitive breeding periods.
     - title: Continued grazing management
       text: Open grazed land needs active stewardship if its structure and biodiversity are to remain.
-    - title: Clear visitor guidance
-      text: Good information reduces wear on the island and helps explain why some restrictions are necessary.
+    - title: Survey work and supervision
+      text: On-island staff monitor wildlife and vegetation while helping visitors understand why certain restrictions and routes are necessary.

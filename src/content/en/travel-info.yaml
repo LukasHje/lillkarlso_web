@@ -1,30 +1,62 @@
 hero:
   kicker: Visit
-  title: The visit begins on the mainland, but weather, sea state, and season decide the day.
-  intro: Plan with margin. Boat access depends on the forecast, and the island does not offer the infrastructure of a large visitor destination.
+  title: The visit begins in Djupvik and is shaped by weather, boat access, and the reserve's short operating season.
+  intro: Lilla Karlsö functions as a weather-sensitive nature visit with small groups, advance booking, and limited visitor infrastructure on the island.
   image: /images/basecamp_lilla_karlso.jpeg
 visit:
   overview:
     kicker: Travel planning
-    title: Practical guidance for a careful day trip
-    intro: Lilla Karlsö works best as a well-prepared nature visit where simple logistics, suitable clothing, and respect for the reserve set the tone.
+    title: Visit the island as a planned reserve trip, not as a spontaneous coastal outing
+    intro: The boat crossing, landing, and stay on the island require planning, weather judgement, and respect for the fact that the site is a protected reserve.
     body:
-      - Check the boat status and weather again on the morning of departure. Wind direction and strength affect docking more than many visitors first expect.
-      - Bring water, windproof layers, and sturdy footwear. Services on the island are limited and surfaces may be dry, uneven, or slippery depending on conditions.
+      - Check current alerts, weather, and boat access again on the morning of departure. Wind direction and strength affect landing more than many visitors expect.
+      - Bring water, windproof layers, and sturdy footwear. The operation is not accessibility-adapted and the ground may be uneven, dry, or slippery depending on conditions.
   practicalCards:
     - title: Reserve regulations
-      text: The reserve depends on low-impact movement, consideration for birdlife, and respect for temporary restrictions.
+      text: The reserve depends on low-impact movement, consideration for birdlife, and respect for temporary restrictions and protection zones.
     - title: Accessibility
-      text: Landing and walking happen on natural terrain without level surfaces, which shapes how accessible the visit is.
+      text: Guided walking and boat landing take place on natural terrain without level surfaces and the operation is not accessibility-adapted.
     - title: Own boat and kayak
-      text: Private landing should only be attempted with strong local judgement and careful assessment of wind direction, sea state, and protected areas.
+      text: Private landing requires prior contact so that staff can receive you and share current reserve guidance before arrival.
   steps:
-    - title: 1. Check the evening update
-      text: Read the seasonal information and boat status to understand the likelihood of normal traffic.
-    - title: 2. Review the morning wind forecast
-      text: Southwesterly and northwesterly winds can quickly change the practical landing conditions.
+    - title: 1. Book in advance
+      text: Advance booking and payment are required at least four days before standard departures.
+    - title: 2. Follow the daily conditions
+      text: Wind, sea state, and operational notices decide whether landing and the day's visit plan can proceed as expected.
     - title: 3. Arrive prepared for natural terrain
-      text: The island is a reserve, not a service complex. Personal preparation matters.
+      text: The island is an exposed reserve with limited services. Personal preparation matters.
+operations:
+  bookingWindow: Trips can be booked for the period 15 June 2026-15 August 2026.
+  seasonWindow: Standard visitor traffic operates during the summer season when weather conditions allow safe landing.
+  departure: Departure at 09:00 from Djupvik.
+  returnTrip: Return trip and arrival back in Djupvik no later than 13:30.
+  weatherNotice: The trip is operated by Gotland Sea Guides in cooperation with the Swedish Society for Nature Conservation on Gotland and runs only when weather and sea conditions allow safe access.
+  pricingTitle: Schedule and prices 2026
+  pricing:
+    - "Price per trip: SEK 5,900, maximum 6 people."
+    - "A guided walk on the island is included in the price."
+    - "Exclusive departures on request from SEK 7,900, maximum 6 people per boat trip."
+  bookingTitle: Information and booking
+  bookingDetails:
+    - label: Email
+      value: contact@gotlandseaguides.se
+      href: mailto:contact@gotlandseaguides.se
+    - label: Mobile phone
+      value: 070-236 34 30
+      href: tel:+46702363430
+  bookingNotes:
+    - Advance booking and payment are required at least four days in advance.
+    - Refund rules are published on the Gotland Sea Guides website.
+    - Small groups and weather-dependent departures are part of the reserve's practical operating conditions.
+  privateBoat:
+    title: Visiting with your own boat
+    intro: Private landing is possible but needs to be coordinated with the island's seasonal operation.
+    body:
+      - During the season there is regular boat traffic to and from the island, which means space for private boats cannot always be guaranteed without prior contact.
+      - Please contact the reserve well before arrival so that staff can be present to receive you and provide the information needed before your visit.
+    contactLabel: Contact - reserve steward
+    contactValue: 070-225 32 91
+    contactHref: tel:+46702253291
 safety:
   overview:
     kicker: Safety

@@ -1,13 +1,9 @@
-@import "@fontsource-variable/manrope";
-@import "@fontsource/cormorant-garamond/400.css";
-@import "@fontsource/cormorant-garamond/500.css";
-@import "@fontsource/cormorant-garamond/600.css";
-@import "@fontsource/cormorant-garamond/700.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Manrope Variable", "Avenir Next", "Segoe UI", sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Roboto", "Segoe UI", Arial, sans-serif;
+  --font-serif: "Roboto Slab", Georgia, serif;
 
   --color-night: #161816;
   --color-charcoal: #232722;
@@ -52,7 +48,7 @@
   a,
   button,
   summary {
-    @apply outline-none;
+    @apply cursor-pointer outline-none;
   }
 
   a:focus-visible,
@@ -141,8 +137,27 @@
   }
 }
 
+@keyframes alert-dismiss-up {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    max-height: 1200px;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+    max-height: 0;
+  }
+}
+
 [data-reveal] {
   animation: fade-up 0.9s var(--ease-quiet) both;
+}
+
+[data-alert-closing="true"] {
+  overflow: clip;
+  animation: alert-dismiss-up 0.34s var(--ease-quiet) forwards;
 }
 
 [data-loading="true"] {

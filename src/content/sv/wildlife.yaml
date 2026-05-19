@@ -1,18 +1,18 @@
 hero:
   kicker: Natur och djurliv
-  title: Fågelliv, kalkflora och havsmiljö gör Lilla Karlsö till en ovanligt koncentrerad naturupplevelse.
-  intro: Här möts klintkolonier, strandnära ekologi och öppna hedmarker i ett landskap som är litet till ytan men rikt på samband.
+  title: Fågelberg, kalkflora och Östersjöns havsmiljö gör Lilla Karlsö till en ovanligt tät naturmiljö.
+  intro: På en liten yta ryms klintkolonier, betesmarker, kalkhedar, marina livsmiljöer och ett djurliv som gjort ön känd långt utanför Gotland.
   image: /images/guillimot_on_cliff.jpg
 ecology:
   kicker: Ekologi
-  title: Ett reservat där vinden, kalken och betet arbetar tillsammans
-  intro: Platsens biologiska rikedom är resultatet av flera långsamma processer som fortfarande pågår.
+  title: Ett reservat där kalk, hav och bete formar livsvillkoren
+  intro: Platsens biologiska rikedom är resultatet av geologi, saltpåverkan, hävd och kustklimat som fortfarande samverkar.
   body:
-    - Kalkberggrunden ger speciella förutsättningar för växtligheten och skapar torra, näringsfattiga miljöer där konkurrenssvaga men specialiserade arter kan leva kvar.
-    - Havet för in salt, fukt och vindtryck, medan betet håller markerna öppna. Det är kombinationen av dessa faktorer som ger ön dess särprägel.
+    - Kalkberggrunden ger förutsättningar för torra, näringsfattiga miljöer där specialiserade växter som karlsösallat, hjorttunga och kransborre kan leva kvar.
+    - Havet för in salt, fukt och vindtryck medan betet håller markerna öppna. Tillsammans skapar dessa processer både fågelberg, blomrika marker och tydliga siktlinjer över landskapet.
 habitats:
   - title: Kalkklintar
-    text: De branta stupen fungerar både som geologisk signatur och som häckningsmiljö för tusentals fåglar.
+    text: De branta stupen fungerar både som geologisk signatur och som häckningsmiljö för stora kolonier av sillgrissla och tordmule.
   - title: Alvarlik kalkmark
     text: Tunna jordlager och exponerade hällar skapar ett hårt men artrikt växtsamhälle.
   - title: Strandvallar och låga slätter
@@ -22,29 +22,29 @@ habitats:
 species:
   - name: Sillgrissla
     category: Sjöfågel
-    summary: En av reservatets mest karaktäristiska arter, synlig i täta kolonier på branta klintavsatser.
+    summary: En av reservatets mest karaktäristiska arter, häckande i stora kolonier på klintavsatserna.
   - name: Tordmule
     category: Sjöfågel
-    summary: Ses ofta tillsammans med sillgrisslan och bidrar starkt till ljudbilden över fågelberget.
-  - name: Orkidéer
+    summary: En tydlig del av ljud- och rörelsebilden över fågelberget, ofta i direkt anslutning till sillgrisslornas kolonier.
+  - name: Pilgrimsfalk
+    category: Rovfågel
+    summary: Kan ses jaga över havet och kring klintarna där fågelkolonierna samlas.
+  - name: Ejder
+    category: Sjöfågel
+    summary: Samlas längs stränderna och är en viktig del av det kustnära fågellivet runt reservatet.
+  - name: Gråsäl
+    category: Havsdjur
+    summary: Lever i vattnen runt ön och knyter samman fågelberget med den marina miljön.
+  - name: Karlsösallat, hjorttunga och kransborre
     category: Flora
-    summary: Kalkjordar och öppna betesmarker ger förutsättningar för en rik och säsongsmässigt skiftande blomning.
-  - name: Strandnära insektsliv
-    category: Ekologi
-    summary: Solvarma lägen, blomrika ytor och lågvuxna marker ger livsmiljöer åt pollinatörer och andra insekter.
-  - name: Karlsösallat och kalkväxter
-    category: Flora
-    summary: Specialiserade växter berättar om öns geologi, långvariga bete och isolerade läge.
-  - name: Östersjöns kustekologi
-    category: Havsmiljö
-    summary: Hav, vind och salt påverkar både arternas beteende och besökarens upplevelse av platsen.
+    summary: Kalkväxter och sällsynta arter berättar om öns geologi, långvariga bete och isolerade läge.
 conservation:
   title: Naturvårdsarbete
-  intro: Skyddet handlar både om att bevara det som är känsligt nu och om att vårda de processer som skapat landskapet över tid.
+  intro: Skyddet handlar både om att bevara det som är känsligt nu och om att fortsätta de processer som format landskapet över lång tid.
   efforts:
     - title: Hänsyn under häckning
       text: Tillträde och rörelsemönster anpassas för att minska störningar under de mest känsliga perioderna.
     - title: Fortsatt hävd
       text: Betespräglade marker behöver skötas för att den öppna karaktären och artrikedomen ska bestå.
-    - title: Tydlig besöksvägledning
-      text: God information minskar slitaget och hjälper fler att förstå varför vissa begränsningar finns.
+    - title: Inventering och tillsyn
+      text: Personalen följer utvecklingen i djurliv och växtlighet och vägleder besökare så att skydd och tillgänglighet kan fungera tillsammans.

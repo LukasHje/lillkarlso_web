@@ -1,7 +1,7 @@
 hero:
   kicker: Nature reserve in the Baltic Sea
-  title: Lilla Karlsö is a quiet seabird island of limestone cliffs, orchid meadows, and sea on every horizon.
-  intro: A visit here is a journey into an exposed and highly distinctive landscape where conservation, birdlife, and Gotland cultural history meet.
+  title: Lilla Karlsö is a seabird cliff, a nature reserve, and a cultural landscape shaped by sea, limestone, and grazing.
+  intro: Off the west coast of Gotland, Sweden's only bird cliffs combine long-term conservation, ancient land use, archaeology, and an exposed Baltic landscape still kept open by sheep grazing.
   image: /images/lilla-karlso-topdown.jpg
   cta:
     label: Plan your visit
@@ -10,21 +10,29 @@ hero:
     label: View island conditions
     href: /en/weather/
 overview:
-  kicker: The island
-  title: A spare landscape with unusual ecological richness
-  intro: Lilla Karlsö lies just off the west coast of Gotland and feels both remote and close at once.
+  kicker: About the reserve
+  title: A protected seabird island off the west coast of Gotland
+  intro: Lilla Karlsö is one of the Baltic Sea's most distinctive protected landscapes and, together with Stora Karlsö, forms Sweden's only bird cliffs.
   body:
-    - The island is small in area but expansive in character. Its limestone plateau, steep cliffs, and low shore ridges create a place that changes quickly with light, wind, and season.
-    - Long grazing history has helped preserve open ground with orchids, juniper, alvar-like limestone surfaces, and flower-rich grasslands. At the same time, the seabird cliffs make Lilla Karlsö one of the most compelling nature experiences in the region.
+    - With dramatic cliffs, rich biodiversity, archaeological traces, and a landscape shaped by grazing for thousands of years, the island functions as both a nature reserve and a cultural record.
+    - Since 1954, Lilla Karlsö has been owned and managed by the Swedish Society for Nature Conservation. The goal is to protect the island's natural and cultural landscape, monitor ecological change, and allow visitors to experience it with care.
+geology:
+  kicker: Geology & natural history
+  title: An island shaped by sea and time
+  intro: Lilla Karlsö is a limestone plateau that once formed part of a coral reef in the Silurian Sea.
+  body:
+    - Around 400 million years ago, the area lay beneath a warm sea where corals and other marine organisms built up the limestone layers that now form the island's cliffs and plateau.
+    - Traces of that ancient world remain as fossils in the rock, while today's landscape is still shaped by Baltic winds, salt exposure, erosion, and very thin soils.
+    - Geology underlies the island's flora, its dramatic cliff formations, and the breeding habitats that have made Lilla Karlsö widely known.
 facts:
   - label: Setting
-    value: About 3 km off the west coast of Gotland
+    value: Off the west coast of Gotland, about 3 km from Djupvik
   - label: Highest point
     value: 66 metres above sea level
-  - label: Landscape type
-    value: Limestone plateau, cliffs, and grazed alvar-like grassland
+  - label: Protection
+    value: Nature reserve since 1954 and Natura 2000 site
   - label: Stewardship
-    value: Protected reserve landscape with a conservation focus
+    value: Managed by the Swedish Society for Nature Conservation, with on-island supervision and field surveys
 highlights:
   - title: Cliffs and sea stacks
     text: Steep faces frame an open plateau shaped by limestone, weather, and the long movement of the Baltic Sea.
@@ -34,37 +42,62 @@ highlights:
     text: Spring and early summer bring orchid displays and drought-adapted flora across the limestone grasslands.
 history:
   section:
-    kicker: History
-    title: A cultural landscape shaped by sea, grazing, and conservation
-    intro: Lilla Karlsö has long been used for grazing and field study, and its identity is inseparable from that long stewardship.
+    kicker: Cultural history
+    title: A landscape of long grazing continuity and modern conservation
+    intro: Lilla Karlsö carries traces of both ancient land use and twentieth-century organized nature protection.
     body:
-      - Sheep grazing has kept the island open for generations. Many of the plants and habitats associated with the island depend on that continuity.
-      - During the twentieth century, conservation work became more formalized and the island emerged as a place where access, research, and habitat protection must remain carefully balanced.
+      - Sheep have grazed the island for thousands of years, and the open landscape depends on that long continuity.
+      - During the twentieth century, Lilla Karlsö also became a site of organized protection, research, supervision, and guided access, where bird protection and careful visitation must be balanced each season.
   timeline:
-    - year: Prehistory to the 1800s
+    - year: About 400 million years ago
+      title: Coral reef becomes limestone island
+      text: The Silurian Sea leaves behind the limestone layers and fossils that still define the island's geology.
+    - year: At least 6,000 years ago
       title: The grazing landscape takes shape
-      text: Long-term grazing maintains open limestone ground and supports the flora that still defines the island today.
-    - year: 1900s
-      title: Scientific attention and protection
-      text: Birdlife, flora, and geology become central reasons for preserving the island as a protected landscape.
+      text: Sheep grazing maintains open ground and supports the habitats and flora now seen as characteristic of the island.
+    - year: 1943-1954
+      title: Hånnlamb and the reserve are secured
+      text: Konrad Hellsing helps save the Gotlandic horned sheep and the Swedish Society for Nature Conservation takes over ownership and stewardship.
     - year: Today
-      title: Access with restraint
-      text: Visits are planned around weather, nesting birds, and a highly sensitive mix of cliff terrain and grazed habitats.
+      title: Protection, supervision, and visitation in balance
+      text: Field surveys, conservation management, and guided visits operate alongside weather-dependent access and seasonal bird protection.
 about:
   section:
-    kicker: Stewardship
-    title: A reserve for learning, careful tourism, and long-term protection
-    intro: The website is intended as a digital visitor centre where information remains easy to maintain yet stable over time.
+    kicker: Reserve administration
+    title: A protected reserve with long-term stewardship
+    intro: Lilla Karlsö has been a nature reserve since 1954 and is also protected as a Natura 2000 area.
     body:
-      - Lilla Karlsö does not need a content-heavy publishing system. Most updates concern seasonal opening, boat traffic, visitor guidance, and a limited set of interpretive texts.
-      - That makes a static architecture appropriate. It is fast, robust, and simple to update before each season without ongoing infrastructure.
+      - Staff on the island carry out wildlife and vegetation surveys, provide supervision, and guide visitors during the season.
+      - Regulations, the reserve management plan, and the Natura 2000 conservation plan are maintained by the County Administrative Board of Gotland, while this website serves as the reserve's practical visitor and conditions portal.
+    links:
+      - label: County Administrative Board of Gotland - Lilla Karlsö
+        href: https://www.lansstyrelsen.se/gotland/besoksmal/naturreservat/lilla-karlso.html?sv.target=12.382c024b1800285d5863a882&sv.12.382c024b1800285d5863a882.route=/&searchString=&counties=&municipalities=&reserveTypes=&natureTypes=&accessibility=&facilities=&sort=none
   stewardship:
-    - title: Low operational burden
-      text: The site is built for static deployment and can be published directly to simple shared hosting.
-    - title: Clear annual updates
-      text: Boat schedules, opening dates, and short text revisions live in structured content files.
-    - title: Trustworthy presentation
-      text: Fewer moving parts support a more official, stable experience for a long-lived reserve website.
+    - title: Nature reserve
+      text: Protection covers bird cliffs, flora, geology, and the open cultural landscape maintained by grazing.
+    - title: Natura 2000
+      text: The reserve is part of the EU network of protected areas and includes habitats and species with long-term conservation obligations.
+    - title: Supervision and field surveys
+      text: On-island staff monitor wildlife and vegetation while helping visitors move through the reserve with care.
+grazing:
+  section:
+    kicker: Grazing landscape & hånnlamb
+    title: Hånnlamb sheep keep the historic landscape open
+    intro: A central part of Lilla Karlsö's identity is the original flock of Gotlandic horned outdoor sheep, known as hånnlamb.
+    body:
+      - The hånnlamb were saved from disappearance by banker Konrad Hellsing in 1943. Hellsing was also the first chairman of the Swedish Society for Nature Conservation on Gotland and played a decisive role in preserving both the breed and the island's open landscape.
+      - Through grazing, the sheep maintain open ground and allow many of the island's plants and habitats to persist. They are therefore not separate from conservation management but one of its main tools.
+      - In winter the flock stays at Snoder in southwestern Gotland, but every year it returns to Lilla Karlsö, continuing a grazing tradition that goes back at least 6,000 years.
+    links:
+      - label: Hånnlamb at Snoder
+        href: https://hannlamb.se/index.html
+  highlights:
+    - title: 6,000 years of grazing
+      text: The open landscape is the result of exceptionally long continuity of grazing, from the first farmers to modern reserve stewardship.
+    - title: Konrad Hellsing's role
+      text: The preservation of hånnlamb connects Gotlandic livestock history with the reserve's modern protection history.
+    - title: Seasonal movement between Snoder and the island
+      text: The annual movement between winter pasture and summer grazing remains part of the practical management of the landscape.
 map:
   title: Orient yourself before departure
   intro: The island is small, but the experience is strongly shaped by landing conditions, weather, paths, and viewpoints. The map offers a light orientation rather than a full GIS system.
@@ -83,13 +116,16 @@ map:
       description: One of the strongest views over the colonies, cliffs, and open Baltic horizon.
 contact:
   title: Contact and enquiries
-  intro: Use these contact routes for bookings, reserve questions, or seasonal updates before visiting.
+  intro: Use these contact routes for booking, reserve questions, private landing enquiries, or seasonal visitor updates.
   details:
     - label: Visitor departure point
       value: Djupvik, Eksta parish, Gotland
     - label: Email
-      value: info@lillakarlso.se
-      href: mailto:info@lillakarlso.se
-    - label: Phone
-      value: +46 (0)498 00 00 00
-      href: tel:+46498000000
+      value: contact@gotlandseaguides.se
+      href: mailto:contact@gotlandseaguides.se
+    - label: Booking
+      value: 070-236 34 30
+      href: tel:+46702363430
+    - label: Reserve steward
+      value: 070-225 32 91
+      href: tel:+46702253291

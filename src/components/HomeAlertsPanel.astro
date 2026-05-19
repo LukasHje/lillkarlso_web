@@ -109,7 +109,18 @@ const statusStyles = {
     button.addEventListener("click", () => {
       const root = button.closest("section");
       if (root instanceof HTMLElement) {
-        root.style.display = "none";
+        if (root.dataset.alertClosing === "true") {
+          return;
+        }
+
+        root.dataset.alertClosing = "true";
+        root.addEventListener(
+          "animationend",
+          () => {
+            root.style.display = "none";
+          },
+          { once: true }
+        );
       }
     });
   });

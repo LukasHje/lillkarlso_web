@@ -4,9 +4,6 @@ import IslandFacts from "@/components/IslandFacts.astro";
 import MapSection from "@/components/MapSection.astro";
 import ParkHeaderHero from "@/components/ParkHeaderHero.astro";
 import ParkUtilityNav from "@/components/ParkUtilityNav.astro";
-import SeasonalStatus from "@/components/SeasonalStatus.astro";
-import TourCard from "@/components/TourCard.astro";
-import WildlifeGrid from "@/components/WildlifeGrid.astro";
 
 import { getAlertSummary } from "@/lib/alerts";
 import type { Locale } from "@/lib/i18n";
@@ -24,6 +21,9 @@ const content = getSiteContent(locale);
 const alertsPageHref = getLocaleUrl(locale, "weather");
 const alertSummary = getAlertSummary(content.alerts.items);
 const alertCount = alertSummary.count;
+
+const operations = content.travelInfo.operations;
+const reserveLinks = content.island.about.section.links ?? [];
 ---
 
 <ParkHeaderHero
@@ -36,131 +36,132 @@ const alertCount = alertSummary.count;
 <ParkUtilityNav locale={locale} routeKey="home" alertCount={alertCount} />
 
 <div class="bg-foam">
+  <section class="border-b border-charcoal/12 bg-[#e9e2d2]">
+    <div class="container-shell grid gap-0 md:grid-cols-3 xl:grid-cols-6">
+      <article class="border-b border-charcoal/12 px-5 py-4 md:border-r xl:border-b-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Aktiva notiser" : "Active notices"}</p>
+        <p class="mt-2 text-2xl font-semibold tracking-[-0.03em] text-charcoal">{alertCount}</p>
+        <p class="mt-1 text-sm leading-6 text-charcoal/72">{locale === "sv" ? "Avstängningar, försiktighetsmeddelanden och informationsnotiser." : "Closures, cautions, and current information notices."}</p>
+      </article>
+      <article class="border-b border-charcoal/12 px-5 py-4 md:border-r xl:border-b-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Bokningsperiod" : "Booking period"}</p>
+        <p class="mt-2 text-lg font-semibold leading-7 tracking-[-0.03em] text-charcoal">{operations.bookingWindow}</p>
+      </article>
+      <article class="border-b border-charcoal/12 px-5 py-4 xl:border-r xl:border-b-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Båtavgång" : "Departure"}</p>
+        <p class="mt-2 text-lg font-semibold leading-7 tracking-[-0.03em] text-charcoal">{operations.departure}</p>
+        <p class="mt-1 text-sm leading-6 text-charcoal/72">{operations.returnTrip}</p>
+      </article>
+      <article class="border-b border-charcoal/12 px-5 py-4 md:border-r xl:border-b-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Säsong" : "Season"}</p>
+        <p class="mt-2 text-lg font-semibold leading-7 tracking-[-0.03em] text-charcoal">{operations.seasonWindow}</p>
+      </article>
+      <article class="border-b border-charcoal/12 px-5 py-4 md:border-r xl:border-b-0">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Guidad tur" : "Guided visit"}</p>
+        <p class="mt-2 text-lg font-semibold leading-7 tracking-[-0.03em] text-charcoal">{locale === "sv" ? "Rundvandring ingår i varje ordinarie resa." : "A guided walk is included in every standard departure."}</p>
+      </article>
+      <article class="px-5 py-4">
+        <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Egen båt" : "Private boat"}</p>
+        <p class="mt-2 text-lg font-semibold leading-7 tracking-[-0.03em] text-charcoal">{locale === "sv" ? "Kontakta tillsynsman i förväg före angöring." : "Contact the reserve steward in advance before landing."}</p>
+      </article>
+    </div>
+  </section>
+
   <section class="border-b border-charcoal/12 py-4 sm:py-5">
     <div class="container-shell">
       <HomeAlertsPanel locale={locale} alerts={content.alerts.items} href={alertsPageHref} />
     </div>
   </section>
 
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell">
-      <h1 class="text-[3.2rem] font-semibold leading-none tracking-[-0.04em] text-charcoal sm:text-[4rem]">
-        {locale === "sv" ? "Ett av Östersjöns mest särpräglade fågelberg" : "One of the Baltic Sea's most distinctive seabird reserves"}
-      </h1>
-      <p class="mt-6 max-w-6xl text-[1.18rem] leading-10 text-charcoal/88">
-        {content.island.overview.body[0]} {content.island.overview.body[1]}
-      </p>
-    </div>
-  </section>
-
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+  <section class="border-b border-charcoal/10 py-8 sm:py-10">
+    <div class="container-shell grid gap-8 xl:grid-cols-[0.92fr_1.08fr]">
       <div>
-        <p class="section-kicker">{messages.routes.about}</p>
-        <h2 class="mt-4 section-title">{content.island.overview.title}</h2>
-        <p class="mt-5 section-copy">{content.island.overview.intro}</p>
-        <div class="mt-6 space-y-4">
-          {content.island.overview.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+        <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-charcoal/52">{locale === "sv" ? "Besök ön" : "Visit the island"}</p>
+        <h1 class="mt-3 text-[2.6rem] font-semibold leading-[0.95] tracking-[-0.05em] text-charcoal sm:text-[3.15rem]">
+          {content.travelInfo.visit.overview.title}
+        </h1>
+        <p class="mt-4 max-w-4xl text-[1.05rem] leading-8 text-charcoal/82">{content.travelInfo.visit.overview.intro}</p>
+        <div class="mt-6 space-y-3 text-[1rem] leading-7 text-charcoal/78">
+          {content.travelInfo.visit.overview.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href={getLocaleUrl(locale, "visit")} class="border border-charcoal/60 px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal transition hover:bg-charcoal hover:text-white">
+            {messages.common.planVisit}
+          </a>
+          <a href={alertsPageHref} class="border border-charcoal/12 bg-white px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal transition hover:border-charcoal/40">
+            {messages.alerts.pageTitle}
+          </a>
         </div>
       </div>
-      <div class="grid gap-5">
-        <div class="overflow-hidden border border-charcoal/12">
-          <img src="/images/cabins_lilla_karlso_sunset.jpg" alt={locale === "sv" ? "Strandhus och klint vid Lilla Karlsö i kvällsljus." : "Shore cabins and cliff edge on Lilla Karlsö at dusk."} class="h-[20rem] w-full object-cover" loading="lazy" />
-        </div>
-        <IslandFacts facts={content.island.facts} />
+
+      <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-2">
+        <article class="bg-white px-5 py-5">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{operations.pricingTitle}</p>
+          <ul class="mt-4 space-y-3 text-[0.98rem] leading-7 text-charcoal/78">
+            {operations.pricing.map((item) => <li>{item}</li>)}
+          </ul>
+        </article>
+        <article class="bg-white px-5 py-5">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{operations.bookingTitle}</p>
+          <div class="mt-4 space-y-3">
+            {operations.bookingDetails.map((detail) => (
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-charcoal/48">{detail.label}</p>
+                {detail.href ? <a href={detail.href} class="mt-1 inline-flex text-base font-semibold text-charcoal underline underline-offset-4">{detail.value}</a> : <p class="mt-1 text-base font-semibold text-charcoal">{detail.value}</p>}
+              </div>
+            ))}
+          </div>
+          <ul class="mt-4 space-y-2 text-sm leading-6 text-charcoal/72">
+            {operations.bookingNotes.map((note) => <li>{note}</li>)}
+          </ul>
+        </article>
+        <article class="bg-white px-5 py-5">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{locale === "sv" ? "Ordinarie trafik" : "Standard traffic"}</p>
+          <p class="mt-4 text-[1rem] leading-7 text-charcoal/78">{operations.weatherNotice}</p>
+        </article>
+        <article class="bg-white px-5 py-5">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{operations.privateBoat.title}</p>
+          <p class="mt-4 text-[1rem] leading-7 text-charcoal/78">{operations.privateBoat.intro}</p>
+          <div class="mt-4 space-y-3 text-sm leading-6 text-charcoal/72">
+            {operations.privateBoat.body.map((paragraph) => <p>{paragraph}</p>)}
+          </div>
+          <p class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-charcoal/48">{operations.privateBoat.contactLabel}</p>
+          <a href={operations.privateBoat.contactHref} class="mt-1 inline-flex text-base font-semibold text-charcoal underline underline-offset-4">
+            {operations.privateBoat.contactValue}
+          </a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell space-y-8">
-      <div class="max-w-4xl">
-        <p class="section-kicker">{messages.common.seasonalUpdate}</p>
-        <h2 class="mt-4 section-title">{content.seasons.overview.title}</h2>
-        <p class="mt-5 section-copy">{content.seasons.overview.intro}</p>
-      </div>
-      <SeasonalStatus items={content.seasons.seasons} />
-    </div>
-  </section>
-
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell space-y-8">
-      <div class="max-w-4xl">
-        <p class="section-kicker">{messages.routes.tours}</p>
-        <h2 class="mt-4 section-title">{content.tours.intro.title}</h2>
-        <p class="mt-5 section-copy">{content.tours.intro.intro}</p>
-      </div>
-      <div class="grid gap-5 xl:grid-cols-3">
-        {content.tours.tours.map((tour) => <TourCard tour={tour} />)}
-      </div>
-      <a href={getLocaleUrl(locale, "tours")} class="card-link">{messages.common.readMore}</a>
-    </div>
-  </section>
-
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+  <section class="border-b border-charcoal/10 py-8 sm:py-10">
+    <div class="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
       <div>
-        <p class="section-kicker">{messages.routes.nature}</p>
-        <h2 class="mt-4 section-title">{content.wildlife.ecology.title}</h2>
-        <p class="mt-5 section-copy">{content.wildlife.ecology.intro}</p>
-        <div class="mt-6 space-y-4">
-          {content.wildlife.ecology.body.map((paragraph) => <p class="text-base leading-7 text-charcoal/76">{paragraph}</p>)}
+        <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-charcoal/52">{locale === "sv" ? "Reservatsadministration" : "Reserve administration"}</p>
+        <h2 class="mt-3 text-[2.2rem] font-semibold leading-tight tracking-[-0.05em] text-charcoal sm:text-[2.7rem]">
+          {content.island.about.section.title}
+        </h2>
+        <p class="mt-4 text-[1.04rem] leading-8 text-charcoal/82">{content.island.about.section.intro}</p>
+        <div class="mt-6 space-y-3 text-[1rem] leading-7 text-charcoal/78">
+          {content.island.about.section.body.map((paragraph) => <p>{paragraph}</p>)}
         </div>
+        {reserveLinks.length > 0 ? (
+          <div class="mt-6 flex flex-wrap gap-3">
+            {reserveLinks.map((link) => (
+              <a href={link.href} target="_blank" rel="noreferrer" class="border border-charcoal/60 px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal transition hover:bg-charcoal hover:text-white">
+                {link.label}
+              </a>
+            ))}
+          </div>
+        ) : null}
       </div>
+
       <div class="space-y-5">
-        <div class="overflow-hidden border border-charcoal/12">
-          <img src="/images/razorbill_on_cliff.jpg" alt={locale === "sv" ? "Tordmular på kalkklint vid havet." : "Razorbills resting on a limestone cliff above the sea."} class="h-[19rem] w-full object-cover" loading="lazy" />
-        </div>
-        <WildlifeGrid items={content.wildlife.species.slice(0, 3)} />
-      </div>
-    </div>
-  </section>
-
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-      <div>
-        <p class="section-kicker">{messages.routes.history}</p>
-        <h2 class="mt-4 section-title">{content.island.history.section.title}</h2>
-        <p class="mt-5 section-copy">{content.island.history.section.intro}</p>
-      </div>
-      <div class="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
-        <div class="overflow-hidden border border-charcoal/12">
-          <img src="/images/sudervagnhus_cave.jpg" alt={locale === "sv" ? "Kalkklint med grottöppning på Lilla Karlsö." : "Limestone cliff with cave opening on Lilla Karlsö."} class="h-full w-full object-cover" loading="lazy" />
-        </div>
-        <div class="grid gap-5">
-          {content.island.history.timeline.map((entry) => (
-            <article class="panel p-6">
-              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-moss">{entry.year}</p>
-              <h3 class="mt-4 font-serif text-3xl text-charcoal">{entry.title}</h3>
-              <p class="mt-4 text-sm leading-7 text-charcoal/72">{entry.text}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="border-b border-charcoal/10 py-10 sm:py-12">
-    <div class="container-shell space-y-8">
-      <div class="max-w-4xl">
-        <p class="section-kicker">{messages.common.practicalInformation}</p>
-        <h2 class="mt-4 section-title">{content.travelInfo.visit.overview.title}</h2>
-        <p class="mt-5 section-copy">{content.travelInfo.visit.overview.intro}</p>
-      </div>
-      <div class="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-        <div class="grid gap-5">
-          {content.travelInfo.visit.practicalCards.map((item) => (
-            <article class="panel p-6">
-              <h3 class="font-serif text-3xl text-charcoal">{item.title}</h3>
-              <p class="mt-4 text-sm leading-7 text-charcoal/72">{item.text}</p>
-            </article>
-          ))}
-        </div>
-        <div class="grid gap-5">
-          {content.travelInfo.visit.steps.map((item) => (
-            <article class="panel p-6">
-              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-moss">{messages.common.planVisit}</p>
-              <h3 class="mt-4 text-xl font-semibold text-charcoal">{item.title}</h3>
+        <IslandFacts facts={content.island.facts} />
+        <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-3">
+          {content.island.about.stewardship.map((item) => (
+            <article class="bg-white px-5 py-5">
+              <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{item.title}</p>
               <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.text}</p>
             </article>
           ))}
@@ -169,7 +170,96 @@ const alertCount = alertSummary.count;
     </div>
   </section>
 
-  <section class="py-10 sm:py-12">
+  <section class="border-b border-charcoal/10 py-8 sm:py-10">
+    <div class="container-shell grid gap-8 xl:grid-cols-[0.88fr_1.12fr]">
+      <div>
+        <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-charcoal/52">{content.island.geology.kicker}</p>
+        <h2 class="mt-3 text-[2.2rem] font-semibold leading-tight tracking-[-0.05em] text-charcoal sm:text-[2.7rem]">
+          {content.island.geology.title}
+        </h2>
+        <p class="mt-4 text-[1.04rem] leading-8 text-charcoal/82">{content.island.geology.intro}</p>
+        <div class="mt-6 space-y-3 text-[1rem] leading-7 text-charcoal/78">
+          {content.island.geology.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+
+      <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-2">
+        {content.island.history.timeline.map((entry) => (
+          <article class="bg-white px-5 py-5">
+            <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{entry.year}</p>
+            <h3 class="mt-3 text-xl font-semibold tracking-[-0.03em] text-charcoal">{entry.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-charcoal/72">{entry.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-charcoal/10 py-8 sm:py-10">
+    <div class="container-shell grid gap-8 xl:grid-cols-[0.84fr_1.16fr]">
+      <div>
+        <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-charcoal/52">{locale === "sv" ? "Djurliv och fågelberg" : "Wildlife & bird cliffs"}</p>
+        <h2 class="mt-3 text-[2.2rem] font-semibold leading-tight tracking-[-0.05em] text-charcoal sm:text-[2.7rem]">
+          {content.wildlife.hero.title}
+        </h2>
+        <p class="mt-4 text-[1.04rem] leading-8 text-charcoal/82">{content.wildlife.ecology.intro}</p>
+        <div class="mt-6 space-y-3 text-[1rem] leading-7 text-charcoal/78">
+          {content.wildlife.ecology.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </div>
+
+      <div class="space-y-5">
+        <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-2 xl:grid-cols-3">
+          {content.wildlife.species.map((item) => (
+            <article class="bg-white px-5 py-5">
+              <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{item.category}</p>
+              <h3 class="mt-3 text-lg font-semibold tracking-[-0.03em] text-charcoal">{item.name}</h3>
+              <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.summary}</p>
+            </article>
+          ))}
+        </div>
+        <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-2">
+          {content.wildlife.conservation.efforts.map((item) => (
+            <article class="bg-white px-5 py-5">
+              <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{item.title}</p>
+              <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-charcoal/10 py-8 sm:py-10">
+    <div class="container-shell grid gap-8 xl:grid-cols-[0.86fr_1.14fr]">
+      <div>
+        <p class="text-[0.78rem] font-semibold uppercase tracking-[0.24em] text-charcoal/52">{content.island.grazing.section.kicker}</p>
+        <h2 class="mt-3 text-[2.2rem] font-semibold leading-tight tracking-[-0.05em] text-charcoal sm:text-[2.7rem]">
+          {content.island.grazing.section.title}
+        </h2>
+        <p class="mt-4 text-[1.04rem] leading-8 text-charcoal/82">{content.island.grazing.section.intro}</p>
+        <div class="mt-6 space-y-3 text-[1rem] leading-7 text-charcoal/78">
+          {content.island.grazing.section.body.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        {(content.island.grazing.section.links ?? []).map((link) => (
+          <a href={link.href} target="_blank" rel="noreferrer" class="mt-6 inline-flex border border-charcoal/60 px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal transition hover:bg-charcoal hover:text-white">
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="grid gap-px border border-charcoal/12 bg-charcoal/12 md:grid-cols-3">
+        {content.island.grazing.highlights.map((item) => (
+          <article class="bg-white px-5 py-5">
+            <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-charcoal/55">{item.title}</p>
+            <p class="mt-3 text-sm leading-7 text-charcoal/72">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8 sm:py-10">
     <div class="container-shell">
       <MapSection
         sectionId="visit-map"

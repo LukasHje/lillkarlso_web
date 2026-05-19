@@ -60,6 +60,7 @@ const islandSchema = z.object({
     secondaryCta: linkSchema
   }),
   overview: sectionSchema,
+  geology: sectionSchema,
   facts: z.array(factSchema),
   highlights: z.array(highlightSchema),
   history: z.object({
@@ -69,6 +70,10 @@ const islandSchema = z.object({
   about: z.object({
     section: sectionSchema,
     stewardship: z.array(highlightSchema)
+  }),
+  grazing: z.object({
+    section: sectionSchema,
+    highlights: z.array(highlightSchema)
   }),
   map: z.object({
     title: z.string(),
@@ -93,6 +98,26 @@ const travelInfoSchema = z.object({
     overview: sectionSchema,
     practicalCards: z.array(highlightSchema),
     steps: z.array(highlightSchema)
+  }),
+  operations: z.object({
+    bookingWindow: z.string(),
+    seasonWindow: z.string(),
+    departure: z.string(),
+    returnTrip: z.string(),
+    weatherNotice: z.string(),
+    pricingTitle: z.string(),
+    pricing: z.array(z.string()),
+    bookingTitle: z.string(),
+    bookingDetails: z.array(contactDetailSchema),
+    bookingNotes: z.array(z.string()),
+    privateBoat: z.object({
+      title: z.string(),
+      intro: z.string(),
+      body: z.array(z.string()),
+      contactLabel: z.string(),
+      contactValue: z.string(),
+      contactHref: z.string().optional()
+    })
   }),
   safety: z.object({
     overview: sectionSchema,

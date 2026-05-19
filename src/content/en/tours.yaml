@@ -5,8 +5,8 @@ hero:
   image: /images/birdwatching_lilla_karlso.jpg
 intro:
   kicker: Discover with a guide
-  title: Small groups and clear interpretation
-  intro: A well-led tour makes the visit richer while reducing pressure on the reserve.
+  title: Small groups, fixed boat departures, and guided interpretation
+  intro: The guided walk is not an optional extra but a central part of how visits can be carried out with care and context.
   body:
     - Guided walks focus on orientation, safety, and understanding the island's ecological and cultural values.
     - The pace is calm, combining practical guidance, landscape reading, and close attention to species and formations.
@@ -40,8 +40,8 @@ tours:
       - Conservation as everyday practice
 booking:
   title: Booking and season
-  intro: Tours are published annually and adjusted according to weather, guide availability, and sensitive periods in the reserve.
+  intro: Summer season departures are published annually and adjusted according to weather, guide availability, landing conditions, and sensitive periods in the reserve.
   notes:
     - Group sizes remain intentionally small to support calmer visits and reduce environmental pressure.
-    - Some tours may shift to shorter formats if sea conditions or bird protection requirements demand it.
-    - Group bookings, association visits, and educational formats can be arranged on request.
+    - Some tours may shift to shorter formats if sea conditions, landing access, or bird protection requirements demand it.
+    - Exclusive trips, group bookings, and educational formats can be arranged on request.
